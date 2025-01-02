@@ -40,6 +40,14 @@ export default defineConfig({
 					autogenerate: { directory: 'guides' },
 				},
 				{
+					label: 'API接口文档',
+					autogenerate: { directory: 'api' },
+				},
+				{
+					label: 'VSCode插件',
+					autogenerate: { directory: 'vscode' },
+				},
+				{
 					label: '参考文档',
 					autogenerate: { directory: 'docs' },
 				}
