@@ -7,11 +7,16 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pages:dev": "wrangler pages dev --proxy 4321",
+    "pages:deploy": "astro build && wrangler pages deploy ./dist"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.30.3",
     "astro": "^5.0.2",
     "sharp": "^0.32.5"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
   }
 }
