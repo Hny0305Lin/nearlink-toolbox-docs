@@ -16,8 +16,9 @@ export default defineConfig({
 			dark: './src/assets/nearlink-logo.svg',
 		},
 		customCss: [
-			'./src/styles/fonts.css',
-			'./src/styles/custom.css',
+			'./src/assets/fonts.css',
+			'./src/assets/custom.css',
+			'./src/assets/landing.css'
 		],
 		components: {
 			Header: './src/components/Header.astro',
