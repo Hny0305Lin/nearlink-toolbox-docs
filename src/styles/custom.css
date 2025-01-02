@@ -1,0 +1,103 @@
+/* Header 基础样式 */
+header {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5rem !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(234, 234, 234, 0.2) !important;
+  z-index: 100;
+  padding: 0 1rem !important;
+}
+
+/* 导航栏容器布局调整 */
+.sl-nav-container {
+  position: relative;
+  z-index: 1;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 左侧区域包含标题和搜索框 */
+.left-group {
+  display: flex !important;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 标题区域 */
+.site-title {
+  height: 3.5rem !important;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 搜索框区域 */
+.search-item {
+  width: 15rem !important;
+  margin: 0 !important;
+}
+
+/* 搜索框本身 */
+.sl-search {
+  width: 100% !important;
+  height: 2.25rem !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(234, 234, 234, 0.2) !important;
+  border-radius: 4px;
+}
+
+.sl-search input {
+  height: 100% !important;
+  padding: 0 1rem !important;
+  font-size: 0.875rem !important;
+  background: transparent !important;
+}
+
+/* 右侧导航项 */
+.sl-nav-items {
+  margin-left: auto !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 暗色模式适配 */
+[data-theme='dark'] header {
+  background: rgba(23, 25, 30, 0.5) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .sl-search {
+  background: rgba(23, 25, 30, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 50em) {
+  .search-item {
+    display: none;
+  }
+  
+  .sl-nav-items {
+    margin-left: 0 !important;
+  }
+} 
+
+/* Card 样式自定义 */
+:root {
+  --sl-card-border-radius: 0.6rem;
+}
+
+.card {
+  border-radius: var(--sl-card-border-radius) !important;
+} 

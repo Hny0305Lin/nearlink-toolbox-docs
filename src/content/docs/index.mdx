@@ -1,36 +1,46 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: NearLink ToolBox
+description: 星闪工具箱,星闪工具,星闪开发,星闪,NearLink,NearLink ToolBox
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: 星闪工具箱, 开始你的星闪之旅
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/nearlink-logo.svg
   actions:
-    - text: Example Guide
+    - text: 点我开始
       link: /guides/example/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: 点我前往国内官网
+      link: https://nearlink.sgguo.com/
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+<Card title="如何使用?" icon="rocket">
+  前往 [官网](https://nearlink.sgguo.com/) 后点击右上角立即下载后，正常安装即可使用。
+</Card>
+
+## 星闪工具箱
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="团队嵌入式代表作" icon="rocket">
+		本项目旨在搭建星闪用户和开发者之间的桥梁, 让用户能够便捷地使用开源固件, 同时也让开发者能够及时发布更新。
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="支持的开发板设备" icon="rocket">
+		支持润和、小熊派、天工聚创、浩瀚银河厂商, 同时也在努力支持更多以及社区上开源的开发板及产品。
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="独立于前端" icon="rocket">
+		Tauri 支持任何前端, 团队开发轻松的同时能保证软件功能互联互通。
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="安全的通讯" icon="rocket">
+		使用 TanStack Router 进行通讯, 保证软件内前后端任何情况下的通讯安全。
+	</Card>
+	<Card title="性能开支少" icon="rocket">
+		得益于 Rust 语言的性能, 软件内后端功能都做到了 Windows 可以做到极致的 4MB 的内存占用。
+	</Card>
+	<Card title="跨平台使用" icon="rocket">
+		支持 Windows, MacOS, Ubuntu 平台, 用户可以随时随地使用。
 	</Card>
 </CardGrid>
