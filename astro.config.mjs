@@ -29,16 +29,20 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: '初次开始',
 						items: [
-							// Each item here is one entry in the navigation menu.
-							{ label: 'Example Guide', slug: 'guides/example' },
+							{ label: '初次开始', slug: 'getting-started/started' },
+							{ label: '如何使用', slug: 'getting-started/how-to-use' },
 						],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: '指南',
+					autogenerate: { directory: 'guides' },
 				},
+				{
+					label: '参考文档',
+					autogenerate: { directory: 'docs' },
+				}
 			],
 		}),
 	],
