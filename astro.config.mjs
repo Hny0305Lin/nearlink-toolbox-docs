@@ -61,11 +61,11 @@ export default defineConfig({
 			},
 			{
 				label: 'API接口文档',
-				autogenerate: { directory: 'api' },
+				autogenerate: { directory: 'toolbox-api' },
 			},
 			{
 				label: 'VSCode插件',
-				autogenerate: { directory: 'vscode' },
+				autogenerate: { directory: 'vscode-extension' },
 			},
 			{
 				label: '参考文档',
