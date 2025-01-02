@@ -101,3 +101,23 @@ header {
 .card {
   border-radius: var(--sl-card-border-radius) !important;
 } 
+
+/* 优化首页 H1 标题的 LCP 性能 */
+:where([data-page-type='splash']) header + div :is(h1) {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 确保标题文本在加载时立即可见 */
+:where([data-page-type='splash']) .hero {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+} 
