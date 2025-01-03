@@ -1,0 +1,68 @@
+---
+title: 小熊派 BM H63 AT使用
+description: 小熊派 BM H63 开发板 AT 指令使用教程
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+# 小熊派 BM H63 AT指令指南
+
+<Card title="设备信息" icon="information">
+  - 设备型号：BearPi BM H63
+  - 主控芯片：Hi3861
+  - 通信方式：UART
+  - 波特率：115200
+  - 数据位：8
+  - 停止位：1
+  - 校验位：无
+</Card>
+
+## 基础 AT 指令
+
+<Tabs>
+  <TabItem label="查询版本">
+    ```bash
+    AT+GMR
+    ```
+    返回固件版本信息
+  </TabItem>
+
+  <TabItem label="恢复出厂">
+    ```bash
+    AT+RESTORE
+    ```
+    恢复出厂设置
+  </TabItem>
+
+  <TabItem label="重启设备">
+    ```bash
+    AT+RST
+    ```
+    重启设备
+  </TabItem>
+</Tabs>
+
+## WiFi 相关指令
+
+<Tabs>
+  <TabItem label="扫描WiFi">
+    ```bash
+    AT+SCAN
+    ```
+    扫描周围可用的 WiFi
+  </TabItem>
+
+  <TabItem label="连接WiFi">
+    ```bash
+    AT+CONN="SSID","PASSWORD"
+    ```
+    连接指定的 WiFi 网络
+  </TabItem>
+</Tabs>
+
+## 注意事项
+
+1. 所有指令以回车换行（\r\n）结束
+2. 指令响应可能需要几秒钟
+3. 部分指令需要重启后生效

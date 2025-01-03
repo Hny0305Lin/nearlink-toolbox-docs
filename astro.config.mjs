@@ -60,6 +60,14 @@ export default defineConfig({
 				autogenerate: { directory: 'guides' },
 			},
 			{
+				label: 'AT 指南',
+				items: [
+					{ label: '小熊派 BM H63 AT使用', slug: 'at-guides/bearpi-bmh63' },
+					{ label: '小熊派 BM H21E AT使用', slug: 'at-guides/bearpi-bmh21e' },
+					{ label: '润和 HH-D03 AT使用', slug: 'at-guides/hihope-hhd03' },
+				],
+			},
+			{
 				label: 'API接口文档',
 				autogenerate: { directory: 'toolbox-api' },
 			},
