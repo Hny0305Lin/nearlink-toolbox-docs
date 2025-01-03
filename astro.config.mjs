@@ -56,7 +56,7 @@ export default defineConfig({
 				],
 			},
 			{
-				label: '指南',
+				label: '使用指南',
 				autogenerate: { directory: 'guides' },
 			},
 			{
