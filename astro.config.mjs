@@ -66,18 +66,22 @@ export default defineConfig({
 					{ label: '小熊派 BM H21E AT使用', slug: 'at-guides/bearpi-bmh21e' },
 					{ label: '润和 HH-D03 AT使用', slug: 'at-guides/hihope-hhd03' },
 				],
+				collapsed: true,
 			},
 			{
 				label: 'API接口文档',
 				autogenerate: { directory: 'toolbox-api' },
+				collapsed: true,
 			},
 			{
 				label: 'VSCode插件',
 				autogenerate: { directory: 'vscode-extension' },
+				collapsed: true,
 			},
 			{
 				label: '参考文档',
 				autogenerate: { directory: 'docs' },
+				collapsed: true,
 			},
 			{
 				label: '关于',
