@@ -15,11 +15,11 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 - 准备好CH340沁恒驱动安装, 在下面教程我们会提供官网链接
 - 准备两根Type-C数据线, 随时为星闪开发板接入计算机做准备
 
-<Aside type="tip" title="开发者提示">如果您想成为一名开发者, 我们更推荐您安装工具箱的同时, 配套安装开发环境!</Aside>
+<Aside type="tip" title="开发者提示">如果您想成为一名开发者, 我们更推荐您安装工具箱的同时, 配套安装如下内容完善您的开发环境!</Aside>
 
 - [安装Hispark Studio](/getting-started/started#安装hispark-studio)
 - [安装Git](/getting-started/started#安装git)
-- [编译](/getting-started/started#sdk代码下载--编译) & 烧录 & 测试
+- [编译](/getting-started/started#sdk代码下载--编译) & [烧录](/getting-started/started#烧录) & [测试](/getting-started/started#测试) & [开发者上传](/getting-started/started#开发者上传)
 - 配置加速编译(海星通社区待施工)
 - 安装VSCode Deveco Device Tool插件(可选,待施工)
 - 下载保留DevTools_CFBB编译工具链(可选,待施工)
@@ -185,12 +185,81 @@ HiSpark studio打开主页界面如下。
 
 ![image-20240801165456569.png](https://s2.loli.net/2025/01/04/Ngq5OEMQo2vLSs8.png)
 
+## 烧录
 
+<Aside type="tip" title="给开发者的提示">沁恒USB驱动的安装, 是您应该需要熟悉掌握的, 请按上面教程前往官网下载安装。</Aside>
 
+安装好驱动后, 将您的星闪开发板连接到电脑上, 打开星闪工具箱。**星闪工具箱有三种烧录固件的方法, 方法如下:**
 
+<Aside type="caution" title="注意">
+  这一则内容, 请您务必移至"如何使用页"查看第一次使用时需要配置的过程!
+  
+  星闪工具箱推荐您选择使用海思模式烧写, 我们已在2025年1月, 适配完整海思Burntool烧写工具, 您即可体验自动上电烧写!
+</Aside>
 
+### 一键烧录
 
+* 前往"浏览固件"页, 选择您需要使用的固件或为您已经分发的固件, 点击页面后, 可以在"包括文件"中看到每一份固件的简要信息和文件名, 点击"一键烧写"即可实现烧写。
 
+![WeChat_20250104014410.png](https://s2.loli.net/2025/01/04/fQrd6Da1tcKVkqX.jpg)
 
+![WeChat_20250104014510.png](https://s2.loli.net/2025/01/04/uGOpPqTcUh68Ymj.jpg)
 
+固件烧写期间, 软件内弹窗请检查, 无误后确认, 新开的命令行窗口里进度条走完即可完成烧写。
+
+![WeChat_20250104021200.png](https://s2.loli.net/2025/01/04/y58ZeuYAzmNdf2R.jpg)
+
+### 手动烧录
+
+* 前往"固件烧写"页, 来到"串口设备"下拉框里, 选择好您需要烧写的串口设备, 再来到下拉框"固件选择"里, 选择要烧写的固件文件。**检查好您的烧写工具配置, 是否都是正确的, 烧写模式推荐选中海思模式, 选中后请检查您的烧写工具路径是否正确!**
+
+![WeChat_20250104015042.png](https://s2.loli.net/2025/01/04/w97PNcKFT6oWyp8.jpg)
+
+您也可以寻找到"固件选择"下拉框的右侧, 有一个文件夹按钮, 点击后, 选择您需要烧写的`.fwpkg`格式的固件文件, 点击"打开"按钮, 即可完成固件选择。
+
+![WeChat_20250104015519.png](https://s2.loli.net/2025/01/04/tGSc1RxwUpYVHZI.jpg)
+
+![WeChat_20250104015246.png](https://s2.loli.net/2025/01/04/YOxFG9v7Krg2fJt.jpg)
+
+固件烧写期间, 软件内弹窗请检查, 无误后确认, 新开的命令行窗口里进度条走完即可完成烧写。
+
+![WeChat_20250104021200.png](https://s2.loli.net/2025/01/04/y58ZeuYAzmNdf2R.jpg)
+
+### 批量烧录
+
+* 前往"批量烧写"页, 来到下拉框"固件选择"里, 选择要烧写的固件文件。**检查好您的烧写工具配置, 是否都是正确的, 烧写模式推荐选中海思模式, 选中后请检查您的烧写工具路径是否正确!**
+
+然后勾选"可用串口"里, 您需要烧写的串口设备, 设置好波特率后即可点击"开始烧写"按钮, 或者右上角的"批量烧写"按钮。
+
+![WeChat_20250104015946.png](https://s2.loli.net/2025/01/04/hyc6tRg3VjJN9qs.jpg)
+
+等待进度条走完即可完成烧写。
+
+![WeChat_20250104021002.png](https://s2.loli.net/2025/01/04/XDhLoZvUlu7ixpf.jpg)
+
+## 测试
+
+<Aside type="tip" title="温馨内容">测试的内容多种多样, 比如上电外部电压电流测试元器件测试、各种各样的触发测试等等, 我们这里教程提供的是您的串口测试。</Aside>
+
+将您的串口**自动上电或手动上电**后, 打开"串口终端"页时，认真配置您的串口配置。一般都为如下配置：
+
+<Card title="串口终端配置" icon="information">
+  - 串口端口: COMX - USB-SERIAL CH34X (COMX)
+  - 数据位: 8
+  - 校验位: 无
+  - 停止位: 1
+  - 流控制: 无
+  - 合包延迟: 50(推荐)
+  - 波特率: 115200(推荐)
+</Card>
+
+![WeChat_20250104021843.png](https://s2.loli.net/2025/01/04/nvDXceowOHs6T7K.jpg)
+
+如上配置正常配置好，就能看到正常的串口终端内容了。
+
+![WeChat_20250104022247.png](https://s2.loli.net/2025/01/04/OFJX5rbIYaMinCL.jpg)
+
+## 开发者上传
+
+(待补充)
 
