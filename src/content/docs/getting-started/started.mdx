@@ -18,10 +18,12 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 <Aside type="tip" title="开发者提示">如果您想成为一名开发者, 我们更推荐您安装工具箱的同时, 配套安装开发环境!</Aside>
 
 - [安装Hispark Studio](/getting-started/started#安装hispark-studio)
-- 安装Git
-- 安装VSCode Deveco Device Tool插件(可选)
-- 下载保留DevTools_CFBB编译工具链
-- 编译 & 烧录 & 测试
+- [安装Git](/getting-started/started#安装git)
+- [编译](/getting-started/started#sdk代码下载--编译) & 烧录 & 测试
+- 安装VSCode Deveco Device Tool插件(可选,待施工)
+- 下载保留DevTools_CFBB编译工具链(可选,待施工)
+- 下载浩瀚银河星闪工具箱插件(待施工)
+- 下载浩瀚银河星闪工具箱开发资料(待施工)
 
 ## 开始下载并安装
 
@@ -131,5 +133,63 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 HiSpark studio打开主页界面如下。
 
 ![WeChat_20250104011249.png](https://s2.loli.net/2025/01/04/scQzhG32kZJSnNx.jpg)
+
+### 安装Git
+
+<Aside type="tip" title="浩瀚银河提示">浩瀚银河为每一位开发者服务, 在教程内, 我们**更推荐您使用Git, 并在开发期间学会使用Git来管理您的项目**, 具体请自行搜索学习, 这里提供的是Windows 下的 Git的安装!</Aside>
+
+可以到 Git 的页面上下载 exe 安装文件并运行：
+
+<LinkCard title="点我前往下载" href="//git-scm.com/download/win" target="_blank"/>
+
+下载后，双击安装包，打开界面如下所示，点击 "next" 按钮开始安装：
+
+完成安装之后，就可以使用命令行的 git 工具（已经自带了 ssh 客户端）了，另外还有一个图形界面的 Git 项目管理工具。
+
+在开始菜单里找到 "Git"->"Git Bash"，会弹出 Git 命令窗口，你可以在该窗口进行 Git 操作。
+
+### SDK代码下载 & 编译
+
+通过Git指令下载, 在您的存储盘, 鼠标右键选择“Open Git Bash here”, 如图所示。
+
+![image-20240807142741095.png](https://s2.loli.net/2025/01/04/YsSD8gJewRuc6oT.png)
+
+在命令框中输入`git clone https://gitee.com/HiSpark/fbb_ws63.git`指令下载代码，等待下载完成。
+
+![image-20240807151920249.png](https://s2.loli.net/2025/01/04/aRdzqBQIjOT1DnN.png)
+
+<Aside type="note" title="注意">
+    如果您遇到了相关的报错问题, Git大概率的问题频发于网络通信, 请关掉代理再进行尝试。
+    
+    或者就是请搜索软件自助扩大Git缓冲区 or 请携带报错内容善于使用搜索引擎自助解决!
+</Aside>
+
+下载完成后, 就是在文件夹如图显示。
+
+![image-20240801103855026.png](https://s2.loli.net/2025/01/04/qBD45Ac2e6EhjfC.png)
+
+代码下载完成后, 打开HiSpark studio工具, 点击“新建工程”。
+
+![image-20240801104223178.png](https://s2.loli.net/2025/01/04/oa2UseR1GjxkMQB.png)
+
+新建工程界面中芯片: `ws63`, 工程名: "xxx"(用户自定义, 但是不能带中文, 特殊符号), 软件包: `xxx/fbb_ws63/src`(SDK软件包存放路径, 这个地方一定要选到src层级, 否则新建会失败), 配置选择完成后，点击“完成按钮”。
+
+![image-20240801112357075.png](https://s2.loli.net/2025/01/04/ubZ2wShPO7m6lzc.png)
+
+点击“build”或者“rebuild”编译, 等待编译完成。
+
+![image-20240801112427220.png](https://s2.loli.net/2025/01/04/AXK7NElon3vUbM1.png)
+
+编译完成如下图所示。
+
+![image-20240801165456569.png](https://s2.loli.net/2025/01/04/Ngq5OEMQo2vLSs8.png)
+
+
+
+
+
+
+
+
 
 
