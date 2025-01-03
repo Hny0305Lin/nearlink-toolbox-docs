@@ -1,0 +1,89 @@
+---
+title: 初次安装
+description: 星闪工具箱入门指南,星闪工具箱
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="注意">我们推荐新手用户, 第一次上手期间遵循我们教程配置, 以免造成不必要的麻烦!</Aside>
+
+星闪工具箱的初次开始，需要您做好如下准备工作:
+
+- 准备一台电脑, **64位 Windows 10 或更高版本**
+- 准备一对星闪开发板, 如[BearPi-Pico H3863](https://bearpi.cn/core_board/bearpi/pico/h3863/)
+- 准备好CH340沁恒驱动安装, 在下面教程我们会提供官网链接
+- 准备两根Type-C数据线, 随时为星闪开发板接入计算机做准备
+
+<Aside type="tip" title="开发者提示">如果您想成为一名开发者, 我们更推荐您安装工具箱的同时, 配套安装开发环境!</Aside>
+
+- 安装Hispark Studio一键环境安装包
+- 安装VSCode Deveco Device Tool插件
+- 下载保留DevTools_CFBB编译工具链
+
+## 开始下载并安装
+
+下载并安装以下软件:
+
+<CardGrid>
+  <Card title="CH340驱动安装" icon="list-format">
+    <LinkCard title="点我下载" href="//www.wch.cn/downloads/CH341SER_EXE.html" target="_blank"/>
+  </Card>
+  <Card title="星闪工具箱安装" icon="list-format">
+    <LinkCard title="点我下载" href="//nearlink.sgguo.com/" target="_blank"/>
+  </Card>
+</CardGrid>
+
+下载在您可以知晓目录位置，比如"downloads", "下载文件夹"这些存储在非 Windows系统盘 的文件夹。
+
+### CH340驱动安装
+
+从沁恒官网下载到`CH341SER.EXE`文件, 保存后打开, 如果遇到UAC弹窗请点击"是"放行操作。
+
+![用户账号控制窗口，请放行](https://s2.loli.net/2025/01/03/EDmvPrc5i7etsjQ.jpg)
+
+然后我们就能打开页面了。
+
+<Aside type="danger">我们推荐新手用户, 安全使用电脑, UAC弹窗是保护您计算机安全的行为, 请不要因此在网络上寻找关闭弹窗的办法。</Aside>
+
+遇到如下页面, 请点击"安装"按钮, 程序会自动运行, 直至弹窗"程序预安装成功"您就完成了CH340驱动安装。
+
+![CH340驱动安装页面](https://s2.loli.net/2025/01/03/NIvo5zYUG1OFu2E.jpg)
+
+![CH340驱动安装提示](https://s2.loli.net/2025/01/03/ulKfa36qe9gwntz.jpg)
+
+如果遇到安装失败了, 请在打开`CH341SER.EXE`文件之前, 先关闭所有杀毒软件, 鼠标右击选中"以管理员身份运行(A)"。
+
+### 星闪工具箱安装
+
+星闪工具箱的安装, 请前往官网[星闪工具箱](https://nearlink.sgguo.com/)下载安装包。
+
+![星闪工具箱官网](https://s2.loli.net/2025/01/03/oVfW5JmpQGxubva.jpg)
+
+<Aside type="danger">下载好运行exe可执行文件, 这一步可能也会遇到UAC弹窗, 请点击"是"放行操作。</Aside>
+
+请选择中文(简体), 点击OK开始安装。
+
+![星闪工具箱安装1](https://s2.loli.net/2025/01/03/XHLG2rw8zsAOjKJ.jpg)
+
+点击下一步继续安装。
+
+![星闪工具箱安装2](https://s2.loli.net/2025/01/03/BjXIkLd32VHmqNO.jpg)
+
+安装目录请修改成自己的非 Windows系统盘 的文件夹，点击下一步继续安装。
+
+![星闪工具箱安装3](https://s2.loli.net/2025/01/03/gaNk5riQ3OJtpHe.jpg)
+
+点击下一步完成最后安装。
+
+![星闪工具箱安装4](https://s2.loli.net/2025/01/03/XrMOHhzp7tkf3Fo.jpg)
+
+勾选"运行 NearLink Toolbox"和"创建桌面快捷方式", 点击完成。
+
+![星闪工具箱安装5](https://s2.loli.net/2025/01/03/tI3db5V4QJKCGNF.jpg)
+
+软件会自动开启, 如果遇到这样页面正常启动, 恭喜您完成了安装使用。
+
+![星闪工具箱启动](https://s2.loli.net/2025/01/03/rCB9IbFGXKDWacd.jpg)
+
+## 开发者配置

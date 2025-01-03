@@ -51,7 +51,7 @@ export default defineConfig({
 			{
 				label: '初次开始',
 				items: [
-					{ label: '初次开始', slug: 'getting-started/started' },
+					{ label: '初次安装', slug: 'getting-started/started' },
 					{ label: '如何使用', slug: 'getting-started/how-to-use' },
 				],
 			},
