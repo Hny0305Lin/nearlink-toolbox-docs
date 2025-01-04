@@ -1,0 +1,101 @@
+---
+title: 第一次配置
+description: 星闪工具箱,星闪工具,星闪开发,星闪,NearLink,NearLink ToolBox,星闪工具箱第一次配置
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="注意">我们推荐新手用户, 第一次上手期间遵循我们教程配置, 以免造成不必要的麻烦!</Aside>
+
+星闪工具箱的软件, 需要您初步配置好相关设置, 即可做到正常使用, 下面我们开始配置。
+
+## 网络设置
+
+网络设置这里, 有两个配置选项, 分别为: 数据源、下载目录。下载目录请选择您电脑的文件存储目录或您新建一个文件夹解决。下面讲解数据源配置。
+
+<Tabs>
+  <TabItem label="福州电信">
+    <Aside type="tip" title="给用户的提示">该选项建议中国大陆任意地区用户选用, 机房部署于福州市当地, 高峰期用网无需担心拥堵!</Aside>
+
+    服务器地址: `haohanyh-ctcc.gcxstudio.cn`
+
+    国内100ms极速响应, 中国大陆福州源, 浩瀚银河项目维护者维护
+  </TabItem>
+
+  <TabItem label="福州联通">
+    <Aside type="tip" title="给用户的提示">该选项建议中国大陆任意地区用户选用, 机房部署于福州市当地, 高峰期用网无需担心拥堵!</Aside>
+
+    服务器地址: `cucc.tj.fz.fj.nearlink-firmwares-mirrors.haohanyh.ovh:44443`
+
+    FTTR千兆网络+低功耗ARM64服务器, 中国大陆福州源, 浩瀚银河项目维护者维护
+  </TabItem>
+
+  <TabItem label="Github">
+    <Aside type="tip" title="给用户的提示">该选项建议魔法用户选用, 为Github地址直链解析!</Aside>
+    仓库地址: `https://github.com/MiraHikari/nearlink-firmwares`
+
+    默认数据源, 由众多项目维护者维护
+  </TabItem>
+
+  <TabItem label="Netlify">
+    <Aside type="tip" title="给用户的提示">该选项建议广东省用户选用, GBCLStudio团队大部分成员位于广东省省内, 常使用该源进行例行维护工作!</Aside>
+    镜像源地址: `mirrors.nearlink-firmwares.gbclstudio.cn`
+
+    Netlify 镜像源, 拉取源为 GitHub 默认, 由 GBCLStudio 维护
+  </TabItem>
+
+  <TabItem label="自定义">
+    <Aside type="tip" title="开发者提示">该选项建议开发者选用, 请开发者管理好定时获取我们仓库源的脚本服务器或其他设备!</Aside>
+  </TabItem>
+</Tabs>
+
+**这里推荐, 数据源选择您使用期间, 解析延迟结果最小的源, 以保证您使用期间稳定**, 如果您希望使用自定义源, 请您自行解决同步问题以及稳定性问题。
+
+## 烧写设置
+
+烧写设置, 有两个配置选项, 分别为: 烧写工具配置、波特率设置。
+
+### 烧写工具配置
+
+烧写模式分为两种, 分别为: 海思模式、自定义模式。
+
+- 海思模式: 使用海思Burntool工具进行烧写, 需要您下载[Burntool工具](https://cucc.tj.fz.fj.nearlink-firmwares-mirrors.haohanyh.ovh:44443/?tools/burntool)后, 在**烧写工具**里配置好可执行文件存储路径。
+
+- 自定义模式: 使用开源ws63flash工具进行烧写, 需要您下载到[ws63flash工具](https://github.com/goodspeed34/ws63flash/releases)后, 在**烧写工具**里配置好可执行文件存储路径。
+
+**最新版1.7.0版本支持自动上电烧写, 依赖海思Burntool工具能力, 这里推荐需要自动上电用户, 选择海思烧写工具**
+
+### 波特率设置
+
+这里的波特率配置会影响到烧写全局使用([浏览固件页的一键烧写](/getting-started/started#一键烧录)、[固件烧写](/getting-started/started#手动烧录)、[批量烧写](/getting-started/started#批量烧录)), 请您根据您实际使用情况进行配置。
+
+<Aside type="danger">Hi2821 芯片的固件烧写为确保稳定性需使用 115200 波特率, 其余情况自行选择使用。</Aside>
+
+## 串口设置
+
+配置串口通信的默认参数，包括波特率、数据位等(在您不了解配置的情况下, 默认配置就是最好的)
+
+默认配置如下:
+
+<Card title="串口配置" icon="information">
+  - 波特率: 115200(推荐)
+  - 数据位: 8
+  - 校验位: 无
+  - 合包延迟: 50(推荐)
+</Card>
+
+默认选项如下: 
+
+<Card title="默认选项" icon="information">
+  - 自动滚动: 开启（当接收到新数据时，自动滚动到最新数据）
+  - 自动换行: 开启（发送数据时自动在末尾添加换行符, 确保串口工具能正常解析）
+  - 显示时间戳: 开启（在每条接收的数据前显示时间）
+  - 显示延迟: 关闭（显示板载与用户之间的消息时间间隔）
+  - 快捷命令自动发送: 开启（点击后跟自动换行一个效果, 自动发送）
+</Card>
+
+## 主题色配置
+
+(待施工)
