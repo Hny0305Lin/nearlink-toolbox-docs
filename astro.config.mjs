@@ -67,6 +67,7 @@ export default defineConfig({
 				items: [
 					{ label: '小熊派 BM H63 AT使用', slug: 'at-guides/bearpi-bmh63' },
 					{ label: '小熊派 BM H21E AT使用', slug: 'at-guides/bearpi-bmh21e' },
+					{ label: '浩瀚银河 Hi3863 星闪网关 AT使用', slug: 'at-guides/haohanyh-hi3863-gateway' },
 					{ label: '润和 HH-D03 AT使用', slug: 'at-guides/hihope-hhd03' },
 				],
 				collapsed: true,
