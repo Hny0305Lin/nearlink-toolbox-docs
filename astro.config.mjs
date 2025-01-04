@@ -54,6 +54,7 @@ export default defineConfig({
 					{ label: '安装及使用', slug: 'getting-started/started' },
 					{ label: '第一次配置', slug: 'getting-started/first-config' },
 				],
+				collapsed: true,
 			},
 			{
 				label: '使用指南',
@@ -92,6 +93,7 @@ export default defineConfig({
 					{ label: '联系我们', slug: 'about/contact' },
 					{ label: '帮助我们', slug: 'about/contribute' },
 				],
+				collapsed: true,
 			},
 		],
 	}), markdoc()],
