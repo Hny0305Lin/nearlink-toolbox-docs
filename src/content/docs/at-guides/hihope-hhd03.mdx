@@ -1,55 +1,308 @@
 ---
 title: 润和 HH-D03 AT使用
 description: 润和 HH-D03 开发板 AT 指令使用教程
+pagefind: false
 ---
-
+import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Card, CardGrid } from '@astrojs/starlight/components';
-
-# 润和 HH-D03 AT指令指南
+import { Steps } from '@astrojs/starlight/components';
+import Video from '../../../components/Video.astro';
 
 <Card title="设备信息" icon="information">
-  - 设备型号：HiHope HH-D03
-  - 主控芯片：Hi3861
-  - 通信方式：UART
-  - 波特率：115200
-  - 数据位：8
-  - 停止位：1
-  - 校验位：无
+  - 设备型号: HiHope HH-D03
+  - 主控芯片: WS63
+  - 支持BLE 5.3 + BLE Mesh + SLE 1.0
+  - 板载用户按键 + 复位按键 + Type-C接口 + CH340C串口 + 稳压器 + 两个指示灯 + 星闪模组和模组内置天线
 </Card>
 
-## 基础 AT 指令
+## 润和 AT 指令使用教程
 
 <Tabs>
-  <TabItem label="查询版本">
-    ```bash
-    AT+VER
-    ```
-    返回固件版本信息
-  </TabItem>
+  <TabItem label="润和 AT(简单配置BLE)">
+  <Aside type="note" title="提示">这里配置的是BLE蓝牙的AT指令, 请确保设备已经烧写AT固件, 并且软件已经导入串口命令集。</Aside>
 
-  <TabItem label="恢复出厂">
+  ### 设备BLE服务端配置
+
+  <Steps>
+
+1. 使能蓝牙
+
     ```bash
-    AT+RESTORE
+    AT+BLEENABLE
     ```
-    恢复出厂设置
+
+2. 设置蓝牙地址
+
+    ```bash
+    AT+BLESETADDR=0,0x112233445566
+    ```
+
+3. 注册服务端回调函数
+
+    ```bash
+    AT+GATTSREGCBK
+    ```
+
+4. 创建一个 GATTServer
+
+    ```bash
+    AT+GATTSREGSRV=0x1122
+    ```
+
+5. 添加一个 GATT 服务
+
+    ```bash
+    AT+GATTSSYNCADDSERV=1,0x1122,1
+    ```
+
+6. 给服务添加一个特征
+
+    ```bash
+    AT+GATTSSYNCADDCHAR=1,14,0x2a4a,0x03,0,1,0x01
+    ```
+
+7. 给特征添加一个描述符
+
+    ```bash
+    AT+GATTSSYNCADDDESCR=1,14,0x2a4a,0x03,1,0x02
+    ```
+
+8. 启动服务
+
+    ```bash
+    AT+GATTSSTARTSERV=1,14
+    ```
+
+9. 设置 BLE 广播数据
+
+    ```bash
+    AT+BLESETADVDATA=6,0x112233445566,0,0,1
+    ```
+
+10. 设置 BLE 广播参数
+
+    ```bash
+    AT+BLESETADVPAR=48,48,0,0x000000000000,0,0x000000000000,7,0,1,0,1
+    ```
+
+11. 开始发送 BLE 广播
+
+    ```bash
+    AT+BLESTARTADV=1
+    ```
+
+  </Steps>
+
+  ### 设备BLE客户端配置
+
+  <Steps>
+
+1. 使能蓝牙
+
+    ```bash
+    AT+BLEENABLE
+    ```
+
+2. 设置蓝牙地址
+
+    ```bash
+    AT+BLESETADDR=0,0x112233445577
+    ```
+
+3. 注册客户端回调函数
+
+    ```bash
+    AT+GATTCREGCB
+    ```
+
+4. 创建一个 GATTClient
+
+    ```bash
+    AT+GATTCREG=0x3434
+    ```
+
+5. 设置 BLE 扫描参数
+
+    ```bash
+    AT+BLESETSCANPAR=0x48,0x48,0,1,0
+    ```
+
+6. 连接服务端
+
+    ```bash
+    AT+BLECONN=0,0x112233445566
+    ```
+
+7. 配对服务端
+
+    ```bash
+    AT+BLEPAIR=0,0x112233445566
+    ```
+
+8. 获取配对信息
+
+    ```bash
+    AT+BLEGETPAIREDDEV
+    ```
+
+9. 发现服务
+
+    ```bash
+    AT+GATTCFNDSERV=1,0,0x1122
+    ```
+  </Steps>
+
+  ### BLE通信测试
+
+  <Card title="视频教程" icon="seti:favicon">
+    <Video
+      title="润和 HH-D03 BLE演示"
+      src="//player.bilibili.com/player.html?isOutside=true&aid=113675419521562&bvid=BV1oHkNYHE4k&cid=27411417986&p=1"
+    />
+  </Card>
+
+  </TabItem>
+  <TabItem label="润和 AT(简单配置SLE)">
+  <Aside type="note" title="提示">这里配置的是SLE星闪的AT指令, 请确保设备已经烧写AT固件, 并且软件已经导入串口命令集。</Aside>
+
+  ### 设备SLE服务端配置
+
+  <Steps>
+
+1. 使能星闪
+
+    ```bash
+    AT+SLEENABLE
+    ```
+
+2. 设置地址
+
+    ```bash
+    AT+SLESETADDR=0,0x112233445566
+    ```
+
+3. 注册服务端回调函数
+
+    ```bash
+    AT+SSAPSREGCBK
+    ```
+
+4. 创建一个服务端
+
+    ```bash
+    AT+SSAPSADDSRV=0x1234
+    ```
+
+5. 添加一个服务
+
+    ```bash
+    AT+SSAPSADDSERV=0x2222,1
+    ```
+
+6. 给服务添加一个属性
+
+    ```bash
+    AT+SSAPSADDPROPERTY=1,0x2323,5,5,2,0x1234
+    ```
+
+7. 给属性添加一个描述符
+
+    ```bash
+    AT+SSAPSADDDESCR=1,2,0x3333,5,5,2,2,0x0200
+    ```
+
+8. 启动服务
+
+    ```bash
+    AT+SSAPSSTARTSERV=1
+    ```
+
+9. 设置 SLE 广播参数
+
+    ```bash
+    AT+SLESETADVPAR=1,3,200,200,0,0x112233445566,0,0x000000000000
+    ```
+
+10. 设置 SLE 广播数据
+
+    ```bash
+    AT+SLESETADVDATA=1,10,4,aabbccddeeff11223344,11224455
+    ```
+
+11. 开始发送 SLE 广播
+
+    ```bash
+    AT+SLESTARTADV=1
+    ```
+
+  </Steps>
+
+  ### 设备SLE客户端配置
+
+  <Steps>
+
+1. 使能星闪
+
+    ```bash
+    AT+SLEENABLE
+    ```
+
+2. 设置地址
+
+    ```bash
+    AT+SLESETADDR=0,0x112233445577
+    ```
+
+3. 注册客户端回调函数
+
+    ```bash
+    AT+SSAPCREGCBK
+    ```
+
+4. 设置 SLE 扫描参数
+
+    ```bash
+    AT+SLESETSCANPAR=1,0x48,0x48
+    ```
+
+5. 开始扫描
+
+    ```bash
+    AT+SLESTARTSCAN
+    ```
+
+6. 停止扫描
+
+    ```bash
+    AT+SLESTOPSCAN
+    ```
+
+7. 连接服务端
+
+    ```bash
+    AT+SLECONN=0,112233445566
+    ```
+
+8. 发现服务
+
+    ```bash
+    AT+SSAPCFNDSTRU=1,0,1
+    ```
+
+  </Steps>
+
+  ### SLE通信测试
+
+  <Card title="视频教程" icon="seti:favicon">
+    <Video
+      title="润和 HH-D03 SLE演示"
+      src="//player.bilibili.com/player.html?isOutside=true&aid=113680620460375&bvid=BV1stk6YNErP&cid=27427277488&p=1"
+    />
+  </Card>
+  </TabItem>
+  <TabItem label="润和 AT(专业版)">
+  (待施工)
   </TabItem>
 </Tabs>
 
-## 网络配置指令
-
-<Tabs>
-  <TabItem label="扫描网络">
-    ```bash
-    AT+SCAN
-    ```
-    扫描可用网络
-  </TabItem>
-
-  <TabItem label="连接网络">
-    ```bash
-    AT+CONN
-    ```
-    连接到指定网络
-  </TabItem>
-</Tabs>
