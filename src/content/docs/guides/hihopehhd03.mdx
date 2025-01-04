@@ -2,5 +2,47 @@
 title: 润和 HiHope HH-D03 开发板使用
 description: 星闪工具箱,星闪工具,星闪开发,星闪,NearLink,NearLink ToolBox,星闪工具箱入门指南,润和,HiHope,HH-D03
 ---
+import { Aside } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
 
-润和 HiHope HH-D03 开发板使用
+<Aside type="note" title="提示">润和HiHope HH-D03 开发板, 已在淘宝上开放用户购买, 请前往下面链接跳转购买。</Aside>
+
+<LinkCard title="HiHope HH-D03 开发板" description="润和新款产品, 点我购买" href="//item.taobao.com/item.htm?spm=a21n57.1.item.1.1afb523cNysA3u&priceTId=2147814c17360005697057724ef740&utparam=%7B%22aplus_abtest%22%3A%22d5812445887df9b2d06c42a4c24beda2%22%7D&id=851723503790&ns=1&abbucket=8&xxc=taobaoSearch&skuId=5815298574509&pisk=gWyKHYTPQNb3bDMcK91iqAsRKlSgp8EF-yrXE40HNPUTVVvlYvfrez3Tz2cnd2v-euUzrzEPY0g7Pz3ut1X0YkkrFZDRntqFeVSTOy3IOdsSmDOCjXTLAv-IFZbceCxsTwD7-Hb5xdOs0ViIVbi5XAioADMSO4T1X0ikRQ9QPlst70oBR49Wffiq5UOIOpGs5mmWdeOIFGEs70MSPbXhyVtIrLFYf95yWe1yhKwtvX3JKVp-4R9mtqMj5L_7BDLqlkg9FL3UF5-gXkbp3lDUHrn0-O9LkoyaWcafeNHz77aS2P62rvP08-lTbs9_bv3ZG7GOA9Ztp2hxjXtJOvF788hU93S4fvaagqlC_NoTK-c-ufL1RlqtRjF8-NJS-SE_Wj2MSKDz77aS2PTd4py0HjhWoqnkOGI9aQlIbWonHzexy8btXqjdeQRr_GotoGI9aQlNbc3cvwdyafSN." target="_blank"/>
+
+<Aside type="caution" title="警告">星闪设备调试, 请准备好一对星闪设备进行调试。</Aside>
+
+## 准备工作
+
+<Tabs>
+  <TabItem label="润和 AT">
+    <Steps>
+    1. 将润和HH-D03开发板, 连接到电脑, 打开星闪工具箱查看是否正常连接。
+    ![WeChat_20250104223851.png](https://s2.loli.net/2025/01/04/O7FhobzNpyiCAn9.jpg)
+    2. 在浏览固件页, 选择**润和HH-D03(BS21) AT固件**, 点击后找到包括文件页, 点击**一键烧写**, 在确认下载并烧写这里检查信息后点击**确认烧写**。
+    ![WeChat_20250104224426.png](https://s2.loli.net/2025/01/04/HAVumdnbkhxRETy.jpg)
+    3. 走完流程后点击板子上按键进行烧写AT固件, 烧写完成后即可。
+    4. 继续在包括文件页, 在串口命令集的**Hihope HH-D03 多命令集合 专业版.json**右侧找到按钮, 点击**一键导入**, 再点击**确认下载**。
+    ![WeChat_20250104224950.png](https://s2.loli.net/2025/01/04/SuQesGNFCmzIAlb.jpg)
+    5. 一切准备就绪后, 请点击**串口终端**页, 配置好后点击连接, 测试**AT**命令, 能返回OK即初步成功, 如图所示:
+    ![WeChat_20250105002543.png](https://s2.loli.net/2025/01/05/WMzDVGtK7hkgxTm.jpg)
+    6. 请不要离开当前页面, 点击前往[润和 HH-D03 AT使用](/at-guides/hihope-hhd03)页面, 查看详细使用方法。
+    </Steps>
+  </TabItem>
+  <TabItem label="其他">
+    (待补充)
+  </TabItem>
+</Tabs>
+
+
+
+
+
+
+
+
+
+
+
+
