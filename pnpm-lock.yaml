@@ -20,6 +20,9 @@ importers:
       sharp:
         specifier: ^0.32.5
         version: 0.32.6
+      starlight-image-zoom:
+        specifier: ^0.10.1
+        version: 0.10.1(@astrojs/starlight@0.30.3(astro@5.1.1(rollup@4.29.1)(typescript@5.7.2)))
     devDependencies:
       wrangler:
         specifier: ^3.0.0
@@ -2161,6 +2164,12 @@ packages:
 
   stacktracey@2.1.8:
     resolution: {integrity: sha512-Kpij9riA+UNg7TnphqjH7/CzctQ/owJGNbFkfEeve4Z4uxT5+JapVLFXcsurIfN34gnTWZNJ/f7NMG0E8JDzTw==}
+
+  starlight-image-zoom@0.10.1:
+    resolution: {integrity: sha512-1uEwijShhFFcYA++lDmFV32WmZkpp/VMvD4+PC5h+7InnyPGMiT+mSVJzbddNEit44OxM5kxbO6/OqcBtjKpOA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.30.0'
 
   stoppable@1.1.0:
     resolution: {integrity: sha512-KXDYZ9dszj6bzvnEMRYvxgeTHU74QBFL54XKtP3nyMuJ81CFYtABZ3bAzL2EdFUaEwJOBOgENyFj3R7oTzDyyw==}
@@ -5167,6 +5176,13 @@ snapshots:
     dependencies:
       as-table: 1.0.55
       get-source: 2.0.12
+
+  starlight-image-zoom@0.10.1(@astrojs/starlight@0.30.3(astro@5.1.1(rollup@4.29.1)(typescript@5.7.2))):
+    dependencies:
+      '@astrojs/starlight': 0.30.3(astro@5.1.1(rollup@4.29.1)(typescript@5.7.2))
+      rehype-raw: 7.0.0
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.1
 
   stoppable@1.1.0: {}
 

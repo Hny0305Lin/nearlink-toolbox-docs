@@ -1,12 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightImageZoom from 'starlight-image-zoom'
 
 import markdoc from '@astrojs/markdoc';
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [starlight({
+		plugins: [starlightImageZoom()],
 		title: {
 			en: 'NearLink ToolBox',
 			'zh-CN': '星闪工具箱',
