@@ -1,0 +1,50 @@
+---
+interface Props {
+  src: string;
+  title?: string;
+}
+
+const { src, title } = Astro.props;
+---
+
+<div class="video-container">
+  {title && <h3>{title}</h3>}
+  <div class="video-wrapper">
+    <iframe
+      src={src}
+      scrolling="no"
+      frameborder="no"
+      allowfullscreen="true"
+    />
+  </div>
+</div>
+
+<style>
+  .video-container {
+    margin: 2rem 0;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: var(--sl-color-black);
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--sl-color-white);
+  }
+</style> 
