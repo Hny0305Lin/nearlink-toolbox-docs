@@ -68,12 +68,22 @@ export default defineConfig({
 				collapsed: true,
 			},
 			{
-				label: 'API接口文档',
+				label: 'OpenHarmony 指南',
+				autogenerate: { directory: 'openharmony-guides' },
+				collapsed: true,
+			},
+			{
+				label: 'API 接口文档',
 				autogenerate: { directory: 'toolbox-api' },
 				collapsed: true,
 			},
 			{
-				label: 'VSCode插件',
+				label: 'Mods 插件文档',
+				autogenerate: { directory: 'mods-plugin' },
+				collapsed: true,
+			},
+			{
+				label: 'VSCode 插件',
 				autogenerate: { directory: 'vscode-extension' },
 				collapsed: true,
 			},
