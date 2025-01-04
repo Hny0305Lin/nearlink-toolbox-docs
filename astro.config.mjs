@@ -10,7 +10,6 @@ export default defineConfig({
 	integrations: [starlight({
 		plugins: [starlightImageZoom()],
 		title: {
-			en: 'NearLink ToolBox',
 			'zh-CN': '星闪工具箱',
 		},
 		logo: {
@@ -43,11 +42,7 @@ export default defineConfig({
 			root: {
 				label: '简体中文',
 				lang: 'zh-CN',
-			},
-			'en': {
-				label: 'English',
-				lang: 'en',
-			},
+			}
 		},
 		sidebar: [
 			{
