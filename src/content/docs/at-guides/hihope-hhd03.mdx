@@ -32,11 +32,15 @@ import Video from '../../../components/Video.astro';
     AT+BLEENABLE
     ```
 
+    ![使能蓝牙](https://s2.loli.net/2025/01/05/ae6ULhK9GY7ZPo4.jpg)
+
 2. 设置蓝牙地址
 
     ```bash
     AT+BLESETADDR=0,0x112233445566
     ```
+
+    ![设置蓝牙地址](https://s2.loli.net/2025/01/05/Yw45S29vgNVom8c.jpg)
 
 3. 注册服务端回调函数
 
@@ -44,11 +48,15 @@ import Video from '../../../components/Video.astro';
     AT+GATTSREGCBK
     ```
 
+    ![注册服务端回调函数](https://s2.loli.net/2025/01/05/mIkjei8ypgWKxh2.jpg)
+
 4. 创建一个 GATTServer
 
     ```bash
     AT+GATTSREGSRV=0x1122
     ```
+
+    ![创建一个 GATTServer](https://s2.loli.net/2025/01/05/YvsIPL7aFfBKhVR.jpg)
 
 5. 添加一个 GATT 服务
 
@@ -56,11 +64,15 @@ import Video from '../../../components/Video.astro';
     AT+GATTSSYNCADDSERV=1,0x1122,1
     ```
 
+    ![添加一个 GATT 服务](https://s2.loli.net/2025/01/05/5Nixb26BkHcPGhl.jpg)
+
 6. 给服务添加一个特征
 
     ```bash
     AT+GATTSSYNCADDCHAR=1,14,0x2a4a,0x03,0,1,0x01
     ```
+
+    ![给服务添加一个特征](https://s2.loli.net/2025/01/05/5Nixb26BkHcPGhl.jpg)
 
 7. 给特征添加一个描述符
 
@@ -68,11 +80,15 @@ import Video from '../../../components/Video.astro';
     AT+GATTSSYNCADDDESCR=1,14,0x2a4a,0x03,1,0x02
     ```
 
+    ![给特征添加一个描述符](https://s2.loli.net/2025/01/05/YEotUxZWbTpgAv6.jpg)
+
 8. 启动服务
 
     ```bash
     AT+GATTSSTARTSERV=1,14
     ```
+
+    ![启动服务](https://s2.loli.net/2025/01/05/hr3uljIA7WHs2No.jpg)
 
 9. 设置 BLE 广播数据
 
@@ -80,17 +96,23 @@ import Video from '../../../components/Video.astro';
     AT+BLESETADVDATA=6,0x112233445566,0,0,1
     ```
 
+    ![设置 BLE 广播数据](https://s2.loli.net/2025/01/05/EzySXDmwuKL2Uoq.jpg)
+
 10. 设置 BLE 广播参数
 
     ```bash
     AT+BLESETADVPAR=48,48,0,0x000000000000,0,0x000000000000,7,0,1,0,1
     ```
 
+    ![设置 BLE 广播参数](https://s2.loli.net/2025/01/05/mqtIHFakl32M5fN.jpg)
+
 11. 开始发送 BLE 广播
 
     ```bash
     AT+BLESTARTADV=1
     ```
+
+    ![开始发送 BLE 广播](https://s2.loli.net/2025/01/05/M9Wui6lBSQwp3Hy.jpg)
 
   </Steps>
 
@@ -104,17 +126,23 @@ import Video from '../../../components/Video.astro';
     AT+BLEENABLE
     ```
 
+    ![使能蓝牙](https://s2.loli.net/2025/01/05/ae6ULhK9GY7ZPo4.jpg)
+
 2. 设置蓝牙地址
 
     ```bash
     AT+BLESETADDR=0,0x112233445577
     ```
 
+    ![设置蓝牙地址](https://s2.loli.net/2025/01/05/Gxhy4KazToHfEYP.jpg)
+
 3. 注册客户端回调函数
 
     ```bash
-    AT+GATTCREGCB
+    AT+GATTCREGCBK
     ```
+
+    ![注册客户端回调函数](https://s2.loli.net/2025/01/05/CJHZyY6hBg1vnRG.jpg)
 
 4. 创建一个 GATTClient
 
@@ -122,11 +150,15 @@ import Video from '../../../components/Video.astro';
     AT+GATTCREG=0x3434
     ```
 
+    ![创建一个 GATTClient](https://s2.loli.net/2025/01/05/j3Lnvk9sucmJfIF.jpg)
+
 5. 设置 BLE 扫描参数
 
     ```bash
     AT+BLESETSCANPAR=0x48,0x48,0,1,0
     ```
+
+    ![设置 BLE 扫描参数](https://s2.loli.net/2025/01/05/O9lscIkvuhCyMZS.jpg)
 
 6. 连接服务端
 
@@ -134,11 +166,15 @@ import Video from '../../../components/Video.astro';
     AT+BLECONN=0,0x112233445566
     ```
 
+    ![连接服务端](https://s2.loli.net/2025/01/05/vpidg1kerVnRl9t.jpg)
+
 7. 配对服务端
 
     ```bash
     AT+BLEPAIR=0,0x112233445566
     ```
+
+    ![配对服务端](https://s2.loli.net/2025/01/05/4RzrBVLak6NCsMm.jpg)
 
 8. 获取配对信息
 
@@ -146,14 +182,76 @@ import Video from '../../../components/Video.astro';
     AT+BLEGETPAIREDDEV
     ```
 
+    ![获取配对信息](https://s2.loli.net/2025/01/05/qYFgTxGPEMSJykz.jpg)
+
 9. 发现服务
 
     ```bash
     AT+GATTCFNDSERV=1,0,0x1122
     ```
+
+    ![发现服务](https://s2.loli.net/2025/01/05/3nwhlP5MWbq8BZR.jpg)
   </Steps>
 
   ### BLE通信测试
+
+<Tabs>
+  <TabItem label="客户端向服务端发送消息">
+  <Steps>
+
+1. 客户端发送写请求
+
+    ```bash
+    AT+GATTCWRITEREQ=1,0,17,1,0x11
+    ```
+
+    ![客户端向服务端发送消息](https://s2.loli.net/2025/01/05/r2AJg8RlPuFq9s5.jpg)
+
+2. **服务端打印接收数据, 如果成功说明收发正常!**
+
+    ```bash
+    [GATTServer]WriteReqReceiveCallback--server_id:1 conn_id:0
+    request_id:3 handle:17 offset:0 need_authorize:0 need_rsp:1 is_prep:0
+    data_len:1 data:
+    11 
+    status:0
+    ```
+
+  </Steps>
+  </TabItem>
+  <TabItem label="服务端向客户端发送消息">
+  <Steps>
+
+1. 服务端发送通知
+
+    ```bash
+    AT+GATTSSNDNTFY=1,0,14,1,0x11
+    ```
+
+    ```bash
+    [GATTServer]ReadReqReceiveCallback--server_id:1 conn_id:0
+    request_id:5 handle:14 offset:0 need_authorize:0 need_rsp:1 is_long:0
+    status:0
+    ```
+
+2. 客户端读取服务端消息, **客户端打印接收数据, 如果成功说明收发正常!**
+
+    ```bash
+    AT+GATTCREADBYHDL=1,0,14
+    ```
+
+    ![客户端读取服务端消息](https://s2.loli.net/2025/01/05/s7YOwLjoVqpDrFi.jpg)
+
+    ```bash
+    [GATTClient]Read result----client:1 conn_id:0
+    handle:14 data_len:1
+    data:11 
+    status:0
+    ```
+
+  </Steps>
+  </TabItem>
+</Tabs>
 
   <Card title="视频教程" icon="seti:video">
     <Video
@@ -161,6 +259,8 @@ import Video from '../../../components/Video.astro';
       src="//player.bilibili.com/player.html?isOutside=true&aid=113675419521562&bvid=BV1oHkNYHE4k&cid=27411417986&p=1"
     />
   </Card>
+
+
 
   </TabItem>
   <TabItem label="润和 AT(简单配置SLE)">
