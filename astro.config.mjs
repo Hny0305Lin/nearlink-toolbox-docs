@@ -54,7 +54,7 @@ export default defineConfig({
 				collapsed: true,
 			},
 			{
-				label: '使用指南',
+				label: '用户指南',
 				autogenerate: { directory: 'guides' },
 			},
 			{
@@ -67,6 +67,10 @@ export default defineConfig({
 					{ label: '天工聚创 P-E528H-WS63 AT使用', slug: 'at-guides/tiangonix-e528h-ws63' },
 				],
 				collapsed: true,
+			},
+			{
+				label: '开发者指南',
+				autogenerate: { directory: 'developer-guides' },
 			},
 			{
 				label: 'OpenHarmony 指南',
