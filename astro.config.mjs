@@ -11,6 +11,7 @@ export default defineConfig({
 		plugins: [starlightImageZoom()],
 		title: {
 			'zh-CN': '星闪工具箱',
+			en: 'NearLink ToolBox',
 		},
 		logo: {
 			light: './src/assets/nearlink-logo.svg',
@@ -42,7 +43,11 @@ export default defineConfig({
 			root: {
 				label: '简体中文',
 				lang: 'zh-CN',
-			}
+			},
+			en: {
+				label: 'English',
+				lang: 'en',
+			},
 		},
 		sidebar: [
 			{
