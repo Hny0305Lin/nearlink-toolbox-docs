@@ -1,8 +1,8 @@
 ---
-title: Reference Documentation
-description: This is a brief description of the reference documentation.
+title: Reference Document
+description: This is a brief description of a reference document.
 ---
 
-# Reference Documentation
+# Reference Document
 
-This is a brief description of the reference documentation.
+This is a brief description of a reference document.

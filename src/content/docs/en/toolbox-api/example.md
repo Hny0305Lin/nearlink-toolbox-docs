@@ -1,10 +1,10 @@
----
-title: API Documentation
-description: This is a brief description of the API documentation.
+---  
+title: API Documentation  
+description: This is a simple description of the API documentation.  
 ---
 
 # API Documentation
 
-This is a brief description of the API documentation.
+This is a simple description of the API documentation.
 
-## Further Reading
+## Further Reading  

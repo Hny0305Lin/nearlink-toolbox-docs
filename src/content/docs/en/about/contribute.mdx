@@ -1,12 +1,12 @@
 ---
 title: Help Us
-description: NearLink ToolBox, NearLink tools, NearLink development, NearLink, NearLink ToolBox, how to contribute to our project
+description: NearLink ToolBox, NearLink Tools, NearLink Development, NearLink, NearLink ToolBox, How to Contribute to Our Project
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-<Aside type="caution" title="Notice">Please do not harass any of our team members for any unreasonable reasons. This is the most basic community courtesy!</Aside>
+<Aside type="caution" title="Caution">Please do not harass any of our team members for any unreasonable reasons; this is the basic community etiquette!</Aside>
 
 Thank you for considering contributing to the NearLink ToolBox!
 
@@ -14,50 +14,50 @@ Thank you for considering contributing to the NearLink ToolBox!
 
 ### Submit Firmware
 
-1. Fork this repository
-2. Create your firmware directory under the `firmwares` directory
-   - It is recommended to name the directory in English
-   - Avoid using manufacturer names such as BearPi and HiHope
-   - Keep it short and easy to understand
+1. Fork this repository.
+2. Create your firmware directory under the `firmwares` folder.
+   - It is recommended to name the directory in English.
+   - Avoid using vendor names like BearPi, HiHope, etc.
+   - Keep it concise and easy to understand.
 3. Add the following files:
-   - Firmware file in `.fwpkg` format
-   - `readme.md` project introduction
-   - `metadata.json` metadata file
-   - Optional `.pdf` user manual
-4. Submit a Pull Request
+   - `.fwpkg` format firmware file.
+   - `readme.md` for project introduction.
+   - `metadata.json` metadata file.
+   - Optional `.pdf` user manual file.
+4. Submit a Pull Request.
 
 ### metadata.json Specification
 
 ```json
 {
     "online": true,                                     // Whether to display online
-    "imageUrl": "Firmware introduction image URL",      // Optional, used to showcase firmware features
+    "imageUrl": "Firmware Introduction Image URL",      // Optional, for showcasing firmware features
     "packageName": "AT Command Firmware",               // Firmware name
-    "description": "Basic communication firmware supporting AT command set", // Brief introduction
-    "author": "Author name",                            // Author information
-    "authorAvatar": "Author avatar URL",                // Github avatar, etc.
-    "needCode": false,                                 // Whether an invitation code/in-app purchase is required
+    "description": "Basic communication firmware supporting AT command set", // Short description
+    "author": "Author Name",                             // Author information
+    "authorAvatar": "Author Avatar URL",                // GitHub avatar, etc.
+    "needCode": false,                                   // Whether an invitation code or in-app purchase is required
     "categories": [
-        "Communication Function"                       // Only selectable: Communication Function/Mobile Terminal/Domestic Replacement/IoT/Smart Home/Entertainment Function/Experience Trial/Physical Product/Physical AT/Physical Product
+        "Communication Features"                        // Optional categories: Communication Features/ Mobile Devices/ Domestic Substitutes/ IoT/ Smart Home/ Entertainment/ New Experience/ Physical Products/ Physical AT/ Physical Products
     ],
     "chips": [
         "Hi2821",                                      // Supported chip models: Hi2821/Hi2825/Hi3863/Hi3873
         "Hi3863"
     ],
     "brands": [
-        "HiHope",                                      // Supported brands: HiHope/BearPi/OpenHarmony/Chenmai Tech/HiSilicon/Lierda/Ai-Thinker/Tiangonix/HaohanYH
-        "BearPi"                                       // Personal/manufacturer brands need to contact maintainers to add
+        "HiHope",                                       // Supported brands: HiHope/BearPi/KaHong/ChengMaiTech/Huawei HiSilicon/LiErDa/AnXinKe/Tiangonix/Haohanyh
+        "BearPi"                                       // Personal/vendor brands should contact maintainers to add
     ],
     "files": [
         {
-            "name": "Firmware Documentation",           // File description
-            "filename": "User Manual.pdf"               // File name
+            "name": "Firmware Documentation",            // File description
+            "filename": "UserManual.pdf"                  // File name
         }
     ],
-    "serialcuts": [                                    // Accompanying serial command sets
+    "serialcuts": [                                     // Corresponding serial command sets
         {
-            "name": "Command Set Name",                // For example: "Multi-Command Set Professional Edition"
-            "filename": "commands.json"                // Command set file name
+            "name": "Command Set Name",                  // For example: "Multi-Command Set Professional Edition"
+            "filename": "commands.json"                 // Command set file name
         }
     ]
 }
@@ -65,60 +65,60 @@ Thank you for considering contributing to the NearLink ToolBox!
 
 ### Share Serial Commands
 
-1. Use the software's graphical interface to edit the command set
-2. Export the command set JSON file
-3. Add the serialcuts field in the metadata.json of the firmware directory:
+1. Use the software's graphical interface to edit the command set.
+2. Export the command set as a JSON file.
+3. Add the `serialcuts` field in the `metadata.json` of the firmware directory:
 
 ```json
 {
     // ... Other firmware metadata fields
     "serialcuts": [
         {
-            "name": "Command Set Name",                // For example: "HH-D03 Multi-Command Set Professional Edition"
-            "filename": "Command Set File Name.json"   // Corresponding JSON file in the firmware directory
+            "name": "Command Set Name",          // For example: "HH-D03 Multi-Command Set Professional Edition"
+            "filename": "CommandSetFileName.json" // Corresponding JSON file in the firmware directory
         }
     ]
 }
 ```
 
-4. Place the command set JSON file in the corresponding firmware directory
+4. Place the command set JSON file in the corresponding firmware directory.
 
-Note: The command set should be used in conjunction with the firmware. It is recommended to:
-- Provide clear command categories
-- Include necessary usage instructions
-- Ensure command accuracy
-- Optionally provide a PDF format command manual
+Note: Command sets should be used in conjunction with the firmware. Suggestions:
+- Provide clear command categorization.
+- Include necessary usage instructions.
+- Ensure the accuracy of commands.
+- Optionally provide a PDF manual for commands.
 
-### Submit Issue
+### Submit an Issue
 
-1. Use the corresponding Issue template
-2. Provide a detailed problem description
+1. Use the appropriate issue template.
+2. Provide a detailed issue description.
 3. If it's a bug, please provide:
-   - Reproduction steps
-   - Environment information
-   - Relevant logs
-   - Screenshots
+   - Reproduction steps.
+   - Environment information.
+   - Relevant logs.
+   - Screenshots.
 
-### Submit Pull Request
+### Submit a Pull Request
 
 1. Ensure the PR title format is correct:
-   - New firmware: `feat: Create XXX New Firmware`
-   - Serial commands: `feat: Create XXX New Serial Shortcuts`
-2. PR description should include:
-   - Explanation of changes
-   - Reference to related issues
-   - Test results description
-3. Select the correct reviewer (@Hny0305Lin)
-4. Ensure all checks pass
+   - New Firmware: `feat: Create XXX New Firmware`
+   - Serial Commands: `feat: Create XXX New Serial Shortcuts`
+2. The PR description should include:
+   - Explanation of changes.
+   - Relevant issue references.
+   - Test results.
+3. Select the correct reviewer (@Hny0305Lin).
+4. Ensure all checks pass.
 
 ## Notes
 
-1. All content must comply with the laws and regulations of Mainland China
+1. All content must comply with the laws and regulations of mainland China.
 2. Firmware must not contain:
-   - Code that damages others' devices
-   - Functions that interfere with communication
-   - Illegal or non-compliant content
-3. Documentation should be in Simplified Chinese, with code comments recommended in both Chinese and English
+   - Code that damages others' devices.
+   - Features that interfere with communication.
+   - Illegal or prohibited content.
+3. Documentation should be in Simplified Chinese, with bilingual code comments recommended.
 
 ## Code of Conduct
 
@@ -126,4 +126,4 @@ Please read our [Code of Conduct](https://github.com/MiraHikari/nearlink-firmwar
 
 ## License
 
-By contributing your code, you agree to license it under the project's MIT license.
+By contributing your code, you agree to license it under the MIT License for the project.
