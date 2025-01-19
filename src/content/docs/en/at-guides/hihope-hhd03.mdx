@@ -7,20 +7,20 @@ import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
-import Video from '../../../components/Video.astro';
+import Video from '@/components/Video.astro';
 
 <Card title="Device Information" icon="information">
   - Device Model: HiHope HH-D03
-  - Main Chip: WS63
+  - Main Control Chip: WS63
   - Supports BLE 5.3 + BLE Mesh + SLE 1.0
-  - Onboard User Button + Reset Button + Type-C Interface + CH340C Serial Port + Voltage Regulator + Two Indicator Lights + NearLink Module and Built-in Antenna
+  - Onboard User Button + Reset Button + Type-C Interface + CH340C Serial Port + Voltage Regulator + Two Indicator Lights + NearLink Module and Module Built-in Antenna
 </Card>
 
 ## HiHope AT Command Usage Tutorial
 
 <Tabs>
   <TabItem label="HiHope AT (Simple BLE Configuration)">
-  <Aside type="note" title="Note">This configuration involves BLE Bluetooth AT commands. Please ensure the device has the AT firmware flashed, and the software has imported the serial command set.</Aside>
+  <Aside type="note" title="Note">Here, the BLE Bluetooth AT commands are configured. Please ensure that the device has been flashed with the AT firmware and that the software has imported the serial command set.</Aside>
 
   ### Device BLE Server Configuration
 
@@ -32,7 +32,7 @@ import Video from '../../../components/Video.astro';
     AT+BLEENABLE
     ```
 
-    ![Enable Bluetooth]()
+    ![Enable Bluetooth](https://s2.loli.net/2025/01/05/ae6ULhK9GY7ZPo4.jpg)
 
 2. Set Bluetooth Address
 
@@ -40,7 +40,7 @@ import Video from '../../../components/Video.astro';
     AT+BLESETADDR=0,0x112233445566
     ```
 
-    ![Set Bluetooth Address]()
+    ![Set Bluetooth Address](https://s2.loli.net/2025/01/05/Yw45S29vgNVom8c.jpg)
 
 3. Register Server Callback Function
 
@@ -48,7 +48,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTSREGCBK
     ```
 
-    ![Register Server Callback Function]()
+    ![Register Server Callback Function](https://s2.loli.net/2025/01/05/mIkjei8ypgWKxh2.jpg)
 
 4. Create a GATTServer
 
@@ -56,7 +56,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTSREGSRV=0x1122
     ```
 
-    ![Create a GATTServer]()
+    ![Create a GATTServer](https://s2.loli.net/2025/01/05/YvsIPL7aFfBKhVR.jpg)
 
 5. Add a GATT Service
 
@@ -64,7 +64,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTSSYNCADDSERV=1,0x1122,1
     ```
 
-    ![Add a GATT Service]()
+    ![Add a GATT Service](https://s2.loli.net/2025/01/05/5Nixb26BkHcPGhl.jpg)
 
 6. Add a Characteristic to the Service
 
@@ -72,7 +72,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTSSYNCADDCHAR=1,14,0x2a4a,0x03,0,1,0x01
     ```
 
-    ![Add a Characteristic to the Service]()
+    ![Add a Characteristic to the Service](https://s2.loli.net/2025/01/05/5Nixb26BkHcPGhl.jpg)
 
 7. Add a Descriptor to the Characteristic
 
@@ -80,7 +80,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTSSYNCADDDESCR=1,14,0x2a4a,0x03,1,0x02
     ```
 
-    ![Add a Descriptor to the Characteristic]()
+    ![Add a Descriptor to the Characteristic](https://s2.loli.net/2025/01/05/YEotUxZWbTpgAv6.jpg)
 
 8. Start the Service
 
@@ -88,7 +88,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTSSTARTSERV=1,14
     ```
 
-    ![Start the Service]()
+    ![Start the Service](https://s2.loli.net/2025/01/05/hr3uljIA7WHs2No.jpg)
 
 9. Set BLE Advertisement Data
 
@@ -96,7 +96,7 @@ import Video from '../../../components/Video.astro';
     AT+BLESETADVDATA=6,0x112233445566,0,0,1
     ```
 
-    ![Set BLE Advertisement Data]()
+    ![Set BLE Advertisement Data](https://s2.loli.net/2025/01/05/EzySXDmwuKL2Uoq.jpg)
 
 10. Set BLE Advertisement Parameters
 
@@ -104,15 +104,15 @@ import Video from '../../../components/Video.astro';
     AT+BLESETADVPAR=48,48,0,0x000000000000,0,0x000000000000,7,0,1,0,1
     ```
 
-    ![Set BLE Advertisement Parameters]()
+    ![Set BLE Advertisement Parameters](https://s2.loli.net/2025/01/05/mqtIHFakl32M5fN.jpg)
 
-11. Start BLE Advertising
+11. Start BLE Advertisement
 
     ```bash
     AT+BLESTARTADV=1
     ```
 
-    ![Start BLE Advertising]()
+    ![Start BLE Advertisement](https://s2.loli.net/2025/01/05/M9Wui6lBSQwp3Hy.jpg)
 
   </Steps>
 
@@ -126,7 +126,7 @@ import Video from '../../../components/Video.astro';
     AT+BLEENABLE
     ```
 
-    ![Enable Bluetooth]()
+    ![Enable Bluetooth](https://s2.loli.net/2025/01/05/ae6ULhK9GY7ZPo4.jpg)
 
 2. Set Bluetooth Address
 
@@ -134,7 +134,7 @@ import Video from '../../../components/Video.astro';
     AT+BLESETADDR=0,0x112233445577
     ```
 
-    ![Set Bluetooth Address]()
+    ![Set Bluetooth Address](https://s2.loli.net/2025/01/05/Gxhy4KazToHfEYP.jpg)
 
 3. Register Client Callback Function
 
@@ -142,7 +142,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTCREGCBK
     ```
 
-    ![Register Client Callback Function]()
+    ![Register Client Callback Function](https://s2.loli.net/2025/01/05/CJHZyY6hBg1vnRG.jpg)
 
 4. Create a GATTClient
 
@@ -150,7 +150,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTCREG=0x3434
     ```
 
-    ![Create a GATTClient]()
+    ![Create a GATTClient](https://s2.loli.net/2025/01/05/j3Lnvk9sucmJfIF.jpg)
 
 5. Set BLE Scan Parameters
 
@@ -158,7 +158,7 @@ import Video from '../../../components/Video.astro';
     AT+BLESETSCANPAR=0x48,0x48,0,1,0
     ```
 
-    ![Set BLE Scan Parameters]()
+    ![Set BLE Scan Parameters](https://s2.loli.net/2025/01/05/O9lscIkvuhCyMZS.jpg)
 
 6. Connect to Server
 
@@ -166,7 +166,7 @@ import Video from '../../../components/Video.astro';
     AT+BLECONN=0,0x112233445566
     ```
 
-    ![Connect to Server]()
+    ![Connect to Server](https://s2.loli.net/2025/01/05/vpidg1kerVnRl9t.jpg)
 
 7. Pair with Server
 
@@ -174,15 +174,15 @@ import Video from '../../../components/Video.astro';
     AT+BLEPAIR=0,0x112233445566
     ```
 
-    ![Pair with Server]()
+    ![Pair with Server](https://s2.loli.net/2025/01/05/4RzrBVLak6NCsMm.jpg)
 
-8. Get Pairing Information
+8. Get Paired Device Information
 
     ```bash
     AT+BLEGETPAIREDDEV
     ```
 
-    ![Get Pairing Information]()
+    ![Get Paired Device Information](https://s2.loli.net/2025/01/05/qYFgTxGPEMSJykz.jpg)
 
 9. Discover Services
 
@@ -190,7 +190,7 @@ import Video from '../../../components/Video.astro';
     AT+GATTCFNDSERV=1,0,0x1122
     ```
 
-    ![Discover Services]()
+    ![Discover Services](https://s2.loli.net/2025/01/05/3nwhlP5MWbq8BZR.jpg)
   </Steps>
 
   ### BLE Communication Test
@@ -205,9 +205,9 @@ import Video from '../../../components/Video.astro';
     AT+GATTCWRITEREQ=1,0,17,1,0x11
     ```
 
-    ![Client Sends Message to Server]()
+    ![Client Sends Message to Server](https://s2.loli.net/2025/01/05/r2AJg8RlPuFq9s5.jpg)
 
-2. **Server Prints Received Data, If Successful, It Indicates Normal Data Exchange!**
+2. **Server Prints Received Data, If Successful, Indicates Normal Communication!**
 
     ```bash
     [GATTServer]WriteReqReceiveCallback--server_id:1 conn_id:0
@@ -234,13 +234,13 @@ import Video from '../../../components/Video.astro';
     status:0
     ```
 
-2. Client Reads Server Message, **Client Prints Received Data, If Successful, It Indicates Normal Data Exchange!**
+2. Client Reads Server Message, **Client Prints Received Data, If Successful, Indicates Normal Communication!**
 
     ```bash
     AT+GATTCREADBYHDL=1,0,14
     ```
 
-    ![Client Reads Server Message]()
+    ![Client Reads Server Message](https://s2.loli.net/2025/01/05/s7YOwLjoVqpDrFi.jpg)
 
     ```bash
     [GATTClient]Read result----client:1 conn_id:0
@@ -259,241 +259,9 @@ import Video from '../../../components/Video.astro';
       src="//player.bilibili.com/player.html?isOutside=true&aid=113675419521562&bvid=BV1oHkNYHE4k&cid=27411417986&p=1"
     />
   </Card>
-
   </TabItem>
-  <TabItem label="HiHope AT (Simple SLE Configuration)">
-  <Aside type="note" title="Note">This configuration involves SLE NearLink AT commands. Please ensure the device has the AT firmware flashed, and the software has imported the serial command set.</Aside>
-
-  ### Device SLE Server Configuration
-
-  <Steps>
-
-1. Enable NearLink
-
-    ```bash
-    AT+SLEENABLE
-    ```
-
-    ![Enable NearLink]()
-
-2. Set Address
-
-    ```bash
-    AT+SLESETADDR=0,0x112233445566
-    ```
-
-    ![Set Address]()
-
-3. Register Server Callback Function
-
-    ```bash
-    AT+SSAPSREGCBK
-    ```
-
-    ![Register Server Callback Function]()
-
-4. Create a Server
-
-    ```bash
-    AT+SSAPSADDSRV=0x1234
-    ```
-
-    ![Create a Server]()
-
-5. Add a Service
-
-    ```bash
-    AT+SSAPSADDSERV=0x2222,1
-    ```
-
-    ![Add a Service]()
-
-6. Add a Property to the Service
-
-    ```bash
-    AT+SSAPSADDPROPERTY=1,0x2323,5,5,2,0x1234
-    ```
-
-    ![Add a Property to the Service]()
-
-7. Add a Descriptor to the Property
-
-    ```bash
-    AT+SSAPSADDDESCR=1,2,0x3333,5,5,2,2,0x0200
-    ```
-
-    ![Add a Descriptor to the Property]()
-
-8. Start the Service
-
-    ```bash
-    AT+SSAPSSTARTSERV=1
-    ```
-
-    ![Start the Service]()
-
-9. Set SLE Advertisement Parameters
-
-    ```bash
-    AT+SLESETADVPAR=1,3,200,200,0,0x112233445566,0,0x000000000000
-    ```
-
-    ![Set SLE Advertisement Parameters]()
-
-10. Set SLE Advertisement Data
-
-    ```bash
-    AT+SLESETADVDATA=1,10,4,aabbccddeeff11223344,11224455
-    ```
-
-    ![Set SLE Advertisement Data]()
-
-11. Start SLE Advertising
-
-    ```bash
-    AT+SLESTARTADV=1
-    ```
-
-    ![Start SLE Advertising]()
-
-  </Steps>
-
-  ### Device SLE Client Configuration
-
-  <Steps>
-
-1. Enable NearLink
-
-    ```bash
-    AT+SLEENABLE
-    ```
-
-    ![Enable NearLink]()
-
-2. Set Address
-
-    ```bash
-    AT+SLESETADDR=0,0x112233445577
-    ```
-
-    ![Set Address]()
-
-3. Register Client Callback Function
-
-    ```bash
-    AT+SSAPCREGCBK
-    ```
-
-    ![Register Client Callback Function]()
-
-4. Set SLE Scan Parameters
-
-    ```bash
-    AT+SLESETSCANPAR=1,0x48,0x48
-    ```
-
-    ![Set SLE Scan Parameters]()
-
-5. Start Scanning
-
-    ```bash
-    AT+SLESTARTSCAN
-    ```
-
-    ![Start Scanning]()
-
-6. Stop Scanning
-
-    ```bash
-    AT+SLESTOPSCAN
-    ```
-
-7. Connect to Server
-
-    ```bash
-    AT+SLECONN=0,112233445566
-    ```
-
-    ![Connect to Server]()
-
-8. Discover Services
-
-    ```bash
-    AT+SSAPCFNDSTRU=1,0,1
-    ```
-
-    ![Discover Services]()
-  </Steps>
-
-  ### SLE Communication Test
-
-<Tabs>
-  <TabItem label="Client Sends Message to Server">
-  <Steps>
-
-1. Client Sends Write Command
-
-    ```bash
-    AT+SSAPCWRITECMD=0,0,1,0,5,0x1122334455
-    ```
-
-2. **Server Prints Received Data, If Successful, It Indicates Normal Data Exchange!**
-
-    ```bash
-    [AT] ssaps write request cb server_id(1) conn id(0) handle(1) status(0).
-    [AT] ssaps write request cb request_id(0) type(0) need_rsp(0) need_authorize(0).
-    [AT] ssaps write request cb data len(5).
-    ------------data-----------------
-    11 22 33 44 55
-    ---------------------------------
-    ```
-
-  </Steps>
-  </TabItem>
-  <TabItem label="Server Sends Message to Client">
-  <Steps>
-
-1. Server Sends Notification
-
-    ```bash
-    AT+SSAPSSNDNTFY=0,1,0,2,0xAA55
-    ```
-
-    Server Outputs the Following:
-
-    ```bash
-    ssaps notify indicate ret:0.
-    OK
-    ```
-
-2. Client Reads Server Property Data, **Client Prints Received Data, If Successful, It Indicates Normal Data Exchange!**
-
-    ```bash
-    AT+SSAPCREADREQ=0,0,1,0
-    ```
-
-    ```bash
-    23:56:01 [Sent] AT+SSAPCREADREQ=0,0,1,0
-    23:56:01 [Received] AT+SSAPCREADREQ=0,0,1,0
-    OK
-    [ssap client] read cfm cbk client: 0 conn_id:0 status: 0. handle:0
-    ------------data-----------------
-    aa 55
-    ---------------------------------
-    ```
-
-  </Steps>
-  </TabItem>
-</Tabs>
-
-  <Card title="Video Tutorial" icon="seti:video">
-    <Video
-      title="HiHope HH-D03 SLE Demo"
-      src="//player.bilibili.com/player.html?isOutside=true&aid=113680620460375&bvid=BV1stk6YNErP&cid=27427277488&p=1"
-    />
-  </Card>
-  </TabItem>
-  <TabItem label="HiHope AT (Professional Version)">
+  <TabItem label="HiHope AT(Professional Version)">
   (Under Construction)
   </TabItem>
 </Tabs>
+

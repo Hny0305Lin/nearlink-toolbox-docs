@@ -7,41 +7,41 @@ import { Aside } from '@astrojs/starlight/components';
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-<Aside type="caution" title="Note">We recommend that new users follow our tutorial for the first configuration to avoid unnecessary trouble!</Aside>
+<Aside type="caution" title="Note">We recommend that novice users follow our tutorial for the initial setup to avoid unnecessary complications!</Aside>
 
-The NearLink ToolBox software requires some initial setup to function properly. Let's start the configuration.
+The NearLink ToolBox software requires some initial configuration to function properly. Let's start the setup process.
 
 ## Network Settings
 
-In the network settings, there are two configuration options: Data Source and Download Directory. For the download directory, please select a file storage directory on your computer or create a new folder. Below is the explanation for the data source configuration.
+In the network settings, there are two configuration options: Data Source and Download Directory. For the download directory, please select a file storage directory on your computer or create a new folder. Below, we explain the data source configuration.
 
 <Tabs>
   <TabItem label="Fuzhou Telecom">
-    <Aside type="tip" title="User Tip">This option is recommended for users in any region of Mainland China. The server is located in Fuzhou, ensuring no congestion during peak hours!</Aside>
+    <Aside type="tip" title="User Tip">This option is recommended for users anywhere in Mainland China. The server is deployed in Fuzhou, ensuring no congestion during peak hours!</Aside>
 
     Server Address: `haohanyh-ctcc.gcxstudio.cn`
 
-    Fast response within 100ms in China, maintained by the Haohanyh project.
+    100ms rapid response in China, Fuzhou source in Mainland China, maintained by the Haohanyh project maintainers.
   </TabItem>
 
   <TabItem label="Fuzhou Unicom">
-    <Aside type="tip" title="User Tip">This option is recommended for users in any region of Mainland China. The server is located in Fuzhou, ensuring no congestion during peak hours!</Aside>
+    <Aside type="tip" title="User Tip">This option is recommended for users anywhere in Mainland China. The server is deployed in Fuzhou, ensuring no congestion during peak hours!</Aside>
 
     Server Address: `cucc.tj.fz.fj.nearlink-firmwares-mirrors.haohanyh.ovh:44443`
 
-    FTTR Gigabit network + low-power ARM64 server, maintained by the Haohanyh project.
+    FTTR Gigabit network + low-power ARM64 server, Fuzhou source in Mainland China, maintained by the Haohanyh project maintainers.
   </TabItem>
 
   <TabItem label="Github">
-    <Aside type="tip" title="User Tip">This option is recommended for users with VPN access, as it directly links to the Github address!</Aside>
+    <Aside type="tip" title="User Tip">This option is recommended for users with VPN. It provides direct link resolution to the Github address!</Aside>
 
     Repository Address: `https://github.com/MiraHikari/nearlink-firmwares`
 
-    Default data source, maintained by various project maintainers.
+    Default data source, maintained by numerous project maintainers.
   </TabItem>
 
   <TabItem label="Netlify">
-    <Aside type="tip" title="User Tip">This option is recommended for users in Guangdong Province. Most members of the GBCLStudio team are located in Guangdong and often use this source for routine maintenance!</Aside>
+    <Aside type="tip" title="User Tip">This option is recommended for users in Guangdong Province. Most members of the GBCLStudio team are located in Guangdong and often use this source for routine maintenance work!</Aside>
     
     Mirror Address: `mirrors.nearlink-firmwares.gbclstudio.cn`
 
@@ -49,37 +49,37 @@ In the network settings, there are two configuration options: Data Source and Do
   </TabItem>
 
   <TabItem label="Custom">
-    <Aside type="tip" title="Developer Tip">This option is recommended for developers. Please manage the script server or other devices that regularly fetch our repository source!</Aside>
+    <Aside type="tip" title="Developer Tip">This option is recommended for developers. Please manage the script server or other devices that periodically fetch our repository source!</Aside>
   </TabItem>
 </Tabs>
 
-**It is recommended to choose the data source with the lowest latency during your usage to ensure stability.** If you wish to use a custom source, please handle the synchronization and stability issues yourself.
+**It is recommended to choose the data source with the lowest resolution delay during your usage to ensure stability.** If you wish to use a custom source, please handle the synchronization and stability issues yourself.
 
-## Flashing Settings
+## Burn Settings
 
-In the flashing settings, there are two configuration options: Flashing Tool Configuration and Baud Rate Settings.
+In the burn settings, there are two configuration options: Burn Tool Configuration and Baud Rate Settings.
 
-### Flashing Tool Configuration
+### Burn Tool Configuration
 
-There are two flashing modes: HiSilicon Mode and Custom Mode.
+There are two burn modes: Hisilicon Mode and Custom Mode.
 
-- HiSilicon Mode: Uses the HiSilicon Burntool for flashing. You need to download the [Burntool](https://cucc.tj.fz.fj.nearlink-firmwares-mirrors.haohanyh.ovh:44443/?tools/burntool) and configure the executable file path in the **Flashing Tool** settings.
+- Hisilicon Mode: Uses the Hisilicon Burntool for burning. You need to download the [Burntool](https://cucc.tj.fz.fj.nearlink-firmwares-mirrors.haohanyh.ovh:44443/?tools/burntool) and configure the executable file storage path in the **Burn Tool**.
 
-- Custom Mode: Uses the open-source ws63flash tool for flashing. You need to download the [ws63flash tool](https://github.com/goodspeed34/ws63flash/releases) and configure the executable file path in the **Flashing Tool** settings.
+- Custom Mode: Uses the open-source ws63flash tool for burning. You need to download the [ws63flash tool](https://github.com/goodspeed34/ws63flash/releases) and configure the executable file storage path in the **Burn Tool**.
 
-**The latest version 1.7.0 supports automatic power-on flashing, relying on the HiSilicon Burntool. It is recommended for users needing automatic power-on to choose the HiSilicon Flashing Tool.**
+**The latest version 1.7.0 supports automatic power-on burning, relying on the Hisilicon Burntool capabilities. It is recommended for users needing automatic power-on to choose the Hisilicon Burn Tool.**
 
 ### Baud Rate Settings
 
-The baud rate configuration here affects the global use of flashing ([One-click Flashing on the Browse Firmware Page](/getting-started/started#one-click-flashing), [Manual Flashing](/getting-started/started#manual-flashing), [Batch Flashing](/getting-started/started#batch-flashing)). Please configure it according to your actual usage.
+The baud rate configuration here affects global burn usage ([One-click burn on the browse firmware page](/getting-started/started#one-click-burn), [Firmware burn](/getting-started/started#manual-burn), [Batch burn](/getting-started/started#batch-burn)). Please configure according to your actual usage.
 
-<Aside type="danger">For Hi2821 chip firmware flashing, a baud rate of 115200 is required to ensure stability. For other cases, choose as needed.</Aside>
+<Aside type="danger">For Hi2821 chip firmware burning, a baud rate of 115200 is recommended to ensure stability. For other cases, choose as needed.</Aside>
 
 ## Serial Port Settings
 
-Configure the default parameters for serial communication, including baud rate, data bits, etc. (If you are unsure, the default configuration is the best.)
+Configure the default parameters for serial communication, including baud rate, data bits, etc. (If you are unsure about the configuration, the default settings are the best.)
 
-Default Configuration:
+Default configuration is as follows:
 
 <Card title="Serial Port Configuration" icon="information">
   - Baud Rate: 115200 (recommended)
@@ -88,16 +88,16 @@ Default Configuration:
   - Packet Delay: 50 (recommended)
 </Card>
 
-Default Options:
+Default options are as follows:
 
 <Card title="Default Options" icon="information">
   - Auto Scroll: Enabled (automatically scrolls to the latest data when new data is received)
-  - Auto Line Feed: Enabled (automatically adds a line feed at the end of sent data to ensure the serial tool can parse it correctly)
+  - Auto Line Feed: Enabled (automatically adds a line feed at the end of sent data, ensuring the serial tool can parse it correctly)
   - Show Timestamp: Enabled (displays the time before each received data)
-  - Show Delay: Disabled (shows the message time interval between the board and the user)
-  - Quick Command Auto Send: Enabled (automatically sends after clicking, similar to auto line feed)
+  - Show Delay: Disabled (shows the time interval between onboard and user messages)
+  - Quick Command Auto Send: Enabled (similar to auto line feed, automatically sends after clicking)
 </Card>
 
 ## Theme Color Configuration
 
-(Under Construction)
+(Under construction)
