@@ -1,30 +1,30 @@
 ---
 title: Installation and Usage
-description: NearLink ToolBox, NearLink, NearLink development, NearLink tools, NearLink ToolBox getting started guide
+description: NearLink ToolBox, NearLink Tools, NearLink Development, NearLink, NearLink ToolBox, Beginner's Guide to NearLink ToolBox
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-<Aside type="caution" title="Attention">We recommend that beginner users follow our tutorial configurations during the first-time setup to avoid unnecessary troubles!</Aside>
+<Aside type="caution" title="Attention">We recommend that novice users follow our tutorial for initial setup to avoid unnecessary complications!</Aside>
 
 To get started with the NearLink ToolBox, you need to prepare the following:
 
 - A computer with **64-bit Windows 10 or higher**
 - A pair of NearLink development boards, such as the [BearPi-Pico H3863](https://bearpi.cn/core_board/bearpi/pico/h3863/)
-- The CH340 driver installed, we will provide a link to the official website in the tutorial below
-- Two Type-C data cables, ready to connect the NearLink development boards to the computer
+- Installation of the CH340 QinHeng driver, for which we will provide the official link in the tutorial below
+- Two Type-C cables, ready to connect the NearLink development boards to your computer
 
-<Aside type="tip" title="Developer Tip">If you want to become a developer, we recommend installing the following to complete your development environment alongside the tool installation!</Aside>
+<Aside type="tip" title="Developer Tip">If you aspire to become a developer, we recommend that you install the following components alongside the ToolBox to complete your development environment!</Aside>
 
 - [Install Hispark Studio](/getting-started/started#install-hispark-studio)
 - [Install Git](/getting-started/started#install-git)
-- [Download SDK code](/getting-started/started#sdk-code-download--compile) & [Flash](/getting-started/started#flash) & [Test](/getting-started/started#test)
-- Configure accelerated compilation (HaiXingTong Community under construction)
-- Install the VSCode Deveco Device Tool plugin (optional, under construction)
-- Download and keep the DevTools_CFBB compilation toolchain (optional, under construction)
-- Download Haohanyh NearLink ToolBox plugin (under construction)
-- Download Haohanyh NearLink ToolBox development materials (under construction)
+- [Compile](/getting-started/started#sdk-code-download--compile) & [Flash](/getting-started/started#flashing) & [Test](/getting-started/started#testing)
+- Configure accelerated compilation (Haixingtong community pending)
+- Install VSCode Deveco Device Tool plugin (optional, pending)
+- Download and retain the DevTools_CFBB compilation toolchain (optional, pending)
+- Download the Haohanyh NearLink ToolBox plugin (pending)
+- Download the Haohanyh NearLink ToolBox development materials (pending)
 
 ## Start Downloading and Installing
 
@@ -32,229 +32,213 @@ Download and install the following software:
 
 <CardGrid>
   <Card title="CH340 Driver Installation" icon="list-format">
-    <LinkCard title="Click to Download" href="//" target="_blank"/>
+    <LinkCard title="Click to Download" href="//www.wch.cn/downloads/CH341SER_EXE.html" target="_blank"/>
   </Card>
   <Card title="NearLink ToolBox Installation" icon="list-format">
     <LinkCard title="Click to Download" href="//nearlink.sgguo.com/" target="_blank"/>
   </Card>
 </CardGrid>
 
-Download it to a folder you can easily find, such as "downloads" or "Download Folder" located on a non-Windows system drive.
+Download to a known directory location, such as "downloads" or "Downloads folder", stored in a non-Windows system drive folder.
 
 ### CH340 Driver Installation
 
-Download the `CH341SER.EXE` file from the official website of Qinheng, save it, and open it. If you encounter a UAC pop-up, click "Yes" to allow the operation.
+Download the `CH341SER.EXE` file from the QinHeng official website, save it, and then open it. If you encounter a UAC pop-up, please click "Yes" to allow the operation.
 
-![User Account Control Window, please allow]()
+![User Account Control window, please allow](https://s2.loli.net/2025/01/03/EDmvPrc5i7etsjQ.jpg)
 
-Then, you should be able to open the page.
+Then we can open the page.
 
-<Aside type="danger">We recommend that beginner users use the computer safely. UAC pop-ups are part of protecting your computer security. Please avoid searching online for methods to disable these pop-ups.</Aside>
+<Aside type="danger">We recommend that novice users use the computer safely. UAC pop-ups are a protective measure for your computer's security. Please do not seek ways to disable these pop-ups online.</Aside>
 
-When you encounter the page below, click the "Install" button, and the program will run automatically until you see the pop-up "Program Pre-installation Successful," indicating that the CH340 driver installation is complete.
+When you encounter the following page, click the "Install" button. The program will run automatically until a pop-up saying "Driver pre-installation successful" appears, indicating that the CH340 driver installation is complete.
 
-![CH340 Driver Installation Page]()
+![CH340 Driver Installation Page](https://s2.loli.net/2025/01/03/NIvo5zYUG1OFu2E.jpg)
 
-![CH340 Driver Installation Prompt]()
+![CH340 Driver Installation Prompt](https://s2.loli.net/2025/01/03/ulKfa36qe9gwntz.jpg)
 
-If the installation fails, please close all antivirus software before opening the `CH341SER.EXE` file, right-click, and select "Run as administrator (A)."
+If the installation fails, please close all antivirus software before opening the `CH341SER.EXE` file, right-click and select "Run as Administrator (A)".
 
 ### NearLink ToolBox Installation
 
-To install NearLink ToolBox, visit the official website [NearLink ToolBox](https://nearlink.sgguo.com/) to download the installation package.
+To install the NearLink ToolBox, please visit the official website [NearLink ToolBox](https://nearlink.sgguo.com/) to download the installation package.
 
-![NearLink ToolBox Official Website]()
+![NearLink ToolBox Official Website](https://s2.loli.net/2025/01/03/oVfW5JmpQGxubva.jpg)
 
-<Aside type="danger">After downloading and running the executable file, you may encounter a UAC pop-up again. Please click "Yes" to allow the operation.</Aside>
+<Aside type="danger">After downloading, run the exe executable file. This step may also encounter a UAC pop-up, please click "Yes" to allow the operation.</Aside>
 
-Select Simplified Chinese and click OK to start the installation.
+Please select Chinese (Simplified), click OK to start the installation.
 
-![NearLink ToolBox Installation 1]()
+![NearLink ToolBox Installation 1](https://s2.loli.net/2025/01/03/XHLG2rw8zsAOjKJ.jpg)
 
 Click Next to continue the installation.
 
-![NearLink ToolBox Installation 2]()
+![NearLink ToolBox Installation 2](https://s2.loli.net/2025/01/03/BjXIkLd32VHmqNO.jpg)
 
-Change the installation directory to a folder on a non-Windows system drive and click Next to continue the installation.
+Modify the installation directory to your own non-Windows system drive folder, then click Next to continue.
 
-![NearLink ToolBox Installation 3]()
+![NearLink ToolBox Installation 3](https://s2.loli.net/2025/01/03/gaNk5riQ3OJtpHe.jpg)
 
 Click Next to complete the final installation.
 
-![NearLink ToolBox Installation 4]()
+![NearLink ToolBox Installation 4](https://s2.loli.net/2025/01/03/XrMOHhzp7tkf3Fo.jpg)
 
-Check "Run NearLink Toolbox" and "Create Desktop Shortcut," then click Finish.
+Check "Run NearLink ToolBox" and "Create desktop shortcut", then click Finish.
 
-![NearLink ToolBox Installation 5]()
+![NearLink ToolBox Installation 5](https://s2.loli.net/2025/01/03/tI3db5V4QJKCGNF.jpg)
 
-The software will automatically start. If this page appears, the startup is normal. Congratulations, you have completed the installation.
+The software will automatically start. If you see this page starting normally, congratulations, you have completed the installation and usage.
 
-![NearLink ToolBox Start]()
+![NearLink ToolBox Startup](https://s2.loli.net/2025/01/03/rCB9IbFGXKDWacd.jpg)
 
 ## Developer Configuration
 
-<Aside type="caution" title="Attention">This tutorial is sourced from the Hispark Gitee repository. If you'd like to learn more, you can click the tutorial link below to check it out.</Aside>
+<Aside type="caution" title="Note">This tutorial is sourced from the Hispark Gitee repository. If you want to learn more, you can click the tutorial below to view it.</Aside>
 
 ### Install Hispark Studio
 
-<Card title="Download and Install" icon="list-format">
-    HiSpark Studio provides an all-in-one integrated development environment for intelligent device developers, supporting code editing, compilation, flashing, and debugging functions.
+<Card title="Download and Installation" icon="list-format">
+    HiSpark Studio provides an integrated development environment for smart device developers, supporting code editing, compilation, flashing, and debugging.
 
     <LinkCard title="Click to Download from HiSilicon Official Website" href="//developer.hisilicon.com/devCenter/index?id=9dfafc50-7189-4fb4-a" target="_blank"/>
 </Card>
 
-![image-20241231144129850.png]()
+![image-20241231144129850.png](https://s2.loli.net/2025/01/04/RNif54yL7axuvHJ.png)
 
-After downloading, double-click "HiSparkStudio1.0.0.8.exe" to install. The installation interface is as follows; select "I Agree to the Terms" and click "Next."
+After downloading, double-click "HiSparkStudio1.0.0.8.exe" to install. The installation interface is as follows, select "I agree to this agreement", then click "Next".
 
-![image-20240801092735347.png]()
+![image-20240801092735347.png](https://s2.loli.net/2025/01/04/2T3CPvBzOhA7Xag.png)
 
-Select the appropriate disk based on your available storage space and click Next.
+Depending on the size of your disk space, select the corresponding disk for installation. After selection, click Next.
 
-<Aside type="danger">Please change the installation directory to a folder on a non-Windows system drive, then click Next to continue the installation.</Aside>
+<Aside type="danger">Modify the installation directory to your own non-Windows system drive folder, then click Next to continue the installation.</Aside>
 
-![image-20240801093020583.png]()
+![image-20240801093020583.png](https://s2.loli.net/2025/01/04/D3JVOKrWQEyxkfH.png)
 
-Select the additional tasks to install (default is all checked), and then click Next.
+Check additional tasks according to your needs. Default is all checked. After selection, click Next.
 
-![image-20240801093118299.png]()
+![image-20240801093118299.png](https://s2.loli.net/2025/01/04/G2e4fVliZkmctoF.png)
 
-Click "Install" to begin the installation.
+Click "Install" to start the installation of the tool.
 
-![image-20240801093302132.png]()
+![image-20240801093302132.png](https://s2.loli.net/2025/01/04/CxuYzf5JPZEVkwR.png)
 
-The installation process will begin, and you'll need to wait for it to complete.
+The installation process is as follows, wait for the installation to complete.
 
-![image-20240801093323050.png]()
+![image-20240801093323050.png](https://s2.loli.net/2025/01/04/bhdMgFK4WoirYl1.png)
 
-The completion screen will appear once the installation is finished. Click Finish.
+The following interface indicates that the installation is complete, click Finish.
 
-![image-20240801093459447.png]()
+![image-20240801093459447.png](https://s2.loli.net/2025/01/04/7zpBG4a6ZMQRstu.png)
 
-HiSpark Studio's main interface is as follows.
+The HiSpark studio main page interface is as follows.
 
-![WeChat_20250104011249.png]()
+![WeChat_20250104011249.png](https://s2.loli.net/2025/01/04/scQzhG32kZJSnNx.jpg)
 
 ### Install Git
 
-<Aside type="tip" title="Haohanyh Tip">Haohanyh serves every developer. In this tutorial, we **recommend you use Git and learn to manage your projects using Git during development**. For more details, please search for tutorials on your own. Below is the installation for Git on Windows!</Aside>
+<Aside type="tip" title="Haohanyh Tip">Haohanyh serves every developer. In the tutorial, we **recommend that you use Git and learn to use Git to manage your projects during development**. Please search and learn on your own. Here we provide the installation of Git for Windows!</Aside>
 
-You can download the Git exe installer from the Git website and run it:
+You can download the exe installation file from the Git page and run it:
 
 <LinkCard title="Click to Download" href="//git-scm.com/download/win" target="_blank"/>
 
-After downloading, double-click the installation package to open the interface and click the "next" button to begin the installation:
+After downloading, double-click the installation package, the interface is as follows, click the "next" button to start the installation:
 
-Once installation is complete, you can use the Git command-line tool (which includes an SSH client) and a graphical Git project management tool.
+After completing the installation, you can use the command line git tool (which already includes an ssh client) and a graphical interface Git project management tool.
 
-Find "Git" in the Start Menu -> "Git Bash," and the Git command window will pop up, allowing you to perform Git operations.
+In the start menu, find "Git" -> "Git Bash", which will open a Git command window where you can perform Git operations.
 
 ### SDK Code Download & Compilation
 
-Download using Git commands. Right-click on your storage drive and select "Open Git Bash here," as shown below.
+Download via Git command. In your storage drive, right-click and select "Open Git Bash here", as shown in the figure.
 
-![image-20240807142741095.png]()
+![image-20240807142741095.png](https://s2.loli.net/2025/01/04/YsSD8gJewRuc6oT.png)
 
-In the command window, enter `git clone https://gitee.com/HiSpark/fbb_ws63.git` to download the code and wait for it to finish downloading.
+In the command box, enter the command `git clone https://gitee.com/HiSpark/fbb_ws63.git` to download the code, wait for the download to complete.
 
-![image-20240807151920249.png]()
+![image-20240807151920249.png](https://s2.loli.net/2025/01/04/aRdzqBQIjOT1DnN.png)
 
 <Aside type="note" title="Note">
-    If you encounter errors, Git issues often stem from network communication problems. Please disable your proxy and try again.
+    If you encounter related error issues, Git problems are likely due to network communication. Please turn off the proxy and try again.
     
-    Alternatively, search for solutions to expand Git's buffer or resolve errors with search engines!
+    Or search for software to automatically expand the Git buffer or carry the error content and use a search engine to solve it yourself!
 </Aside>
 
-Once downloaded, the folder will appear as shown below.
+After the download is complete, it will be displayed in the folder as shown.
 
-![image-20240801103855026.png]()
+![image-20240801103855026.png](https://s2.loli.net/2025/01/04/qBD45Ac2e6EhjfC.png)
 
-Once the code is downloaded, open HiSpark Studio, click "New Project."
+After the code download is complete, open the HiSpark studio tool and click "New Project".
 
-![image-20240801104223178.png]()
+![image-20240801104223178.png](https://s2.loli.net/2025/01/04/oa2UseR1GjxkMQB.png)
 
-In the New Project window, select chip: `ws63`, project name: "xxx" (user-defined, no Chinese characters or special symbols), and software package: `xxx/fbb_ws63/src` (SDK software package path, make sure to select the src folder, or the project will fail). After completing the configuration, click "Finish."
+In the new project interface, chip: `ws63`, project name: "xxx" (user-defined, but cannot contain Chinese or special symbols), software package: `xxx/fbb_ws63/src` (SDK software package storage path, this must be selected to the src level, otherwise the new creation will fail). After completing the configuration, click the "Finish button".
 
-![image-20240801112357075.png]()
+![image-20240801112357075.png](https://s2.loli.net/2025/01/04/ubZ2wShPO7m6lzc.png)
 
-Click "build" or "rebuild" to compile and wait for the compilation to complete.
+Click "build" or "rebuild" to compile, wait for the compilation to complete.
 
-![image-20240801112427220.png]()
+![image-20240801112427220.png](https://s2.loli.net/2025/01/04/AXK7NElon3vUbM1.png)
 
-Once the compilation is finished, it will look like this.
+The compilation is completed as shown below.
 
-![image-20240801165456569.png]()
+![image-20240801165456569.png](https://s2.loli.net/2025/01/04/Ngq5OEMQo2vLSs8.png)
 
 ## Flashing
 
-<Aside type="tip" title="Developer Tip">Installing the Qinheng USB driver is something you should be familiar with. Please follow the official tutorial to download and install it.</Aside>
+<Aside type="tip" title="Tip for Developers">The installation of the QinHeng USB driver is something you should be familiar with. Please follow the tutorial above to download and install from the official website.</Aside>
 
-After installing the driver, connect your NearLink development board to the computer, open the NearLink ToolBox. **The NearLink ToolBox offers three methods for flashing firmware, as described below:**
+After installing the driver, connect your NearLink development board to the computer and open the NearLink ToolBox. **The NearLink ToolBox has three methods for flashing firmware, as follows:**
 
-<Aside type="caution" title="Attention">
-  Please make sure to check the "[First Configuration Page](/getting-started/first-config)" for the necessary setup process during the first use!
+<Aside type="caution" title="Note">
+  This content must be moved to the "[First Configuration Page](/getting-started/first-config)" to view the process needed for first-time use!
   
-  The recommended flashing method is using the HiSilicon mode. We have fully adapted the HiSilicon Burntool flashing tool as of January 2025, enabling automatic power-on flashing!
+  The NearLink ToolBox recommends using the HiSilicon mode for flashing. We have fully adapted the HiSilicon Burntool flashing tool in January 2025, and you can now experience automatic power-on flashing!
 </Aside>
 
 ### One-Click Flashing
 
-* Go to the "Browse Firmware" page, select the firmware you need or the firmware already distributed to you. After clicking the page, you will see a brief description and file name for each firmware in "Include Files." Click "One-click Flash" to start the flashing.
+* Go to the "Browse Firmware" page, select the firmware you need to use or the firmware that has been distributed to you. After clicking the page, you can see the brief information and file name of each firmware in the "Include Files". Click "One-Click Flash" to achieve flashing.
 
-![WeChat_20250104014410.png]()
+![WeChat_20250104014410.png](https://s2.loli.net/2025/01/04/fQrd6Da1tcKVkqX.jpg)
 
-![WeChat_20250104014510.png]()
+![WeChat_20250104014510.png](https://s2.loli.net/2025/01/04/uGOpPqTcUh68Ymj.jpg)
 
-During the flashing process, check the pop-up in the software. Once confirmed, the progress bar in the new command window will complete the flashing.
+During the firmware flashing, please check the pop-up window in the software. If there are no errors, confirm. The progress bar in the newly opened command line window will complete the flashing.
 
-![WeChat_20250104021200.png]()
+![WeChat_20250104021200.png](https://s2.loli.net/2025/01/04/y58ZeuYAzmNdf2R.jpg)
 
 ### Manual Flashing
 
-* Go to the "Firmware Flashing" page, select the serial device you need from the "Serial Device" dropdown, and then select the firmware file to flash from the "Firmware Selection" dropdown. **Check that your flashing tool configuration is correct, and select HiSilicon mode for flashing. Make sure the flashing tool path is correct!**
+* Go to the "Firmware Flashing" page, in the "Serial Device" drop-down box, select the serial device you need to flash. Then in the "Firmware Selection" drop-down box, select the firmware file to flash. **Check your flashing tool configuration, ensure everything is correct. The flashing mode is recommended to select HiSilicon mode. After selection, please check if your flashing tool path is correct!**
 
-![WeChat_20250104015042.png]()
+![WeChat_20250104015042.png](https://s2.loli.net/2025/01/04/w97PNcKFT6oWyp8.jpg)
 
-You can also click the folder button next to "Firmware Selection" to choose the `.fwpkg` firmware file to flash. Click "Open" to complete the firmware selection.
+You can also find a folder button on the right side of the "Firmware Selection" drop-down box. Click it, select the `.fwpkg` format firmware file you need to flash, click the "Open" button to complete the firmware selection.
 
-![WeChat_20250104015519.png]()
+![WeChat_20250104015519.png](https://s2.loli.net/2025/01/04/tGSc1RxwUpYVHZI.jpg)
 
-![WeChat_20250104015246.png]()
+![WeChat_20250104015246.png](https://s2.loli.net/2025/01/04/YOxFG9v7Krg2fJt.jpg)
 
-During the flashing process, check the pop-up in the software. Once confirmed, the progress bar in the new command window will complete the flashing.
+During the firmware flashing, please check the pop-up window in the software. If there are no errors, confirm. The progress bar in the newly opened command line window will complete the flashing.
 
-![WeChat_20250104021200.png]()
+![WeChat_20250104021200.png](https://s2.loli.net/2025/01/04/y58ZeuYAzmNdf2R.jpg)
 
 ### Batch Flashing
 
-* Go to the "Batch Flashing" page, select the firmware file to flash from the "Firmware Selection" dropdown. **Check that your flashing tool configuration is correct, and select HiSilicon mode for flashing. Make sure the flashing tool path is correct!**
+* Go to the "Batch Flashing" page, in the "Firmware Selection" drop-down box, select the firmware file to flash. **Check your flashing tool configuration, ensure everything is correct. The flashing mode is recommended to select HiSilicon mode. After selection, please check if your flashing tool path is correct!**
 
-Then, check the available serial ports under "Available Serial Ports," set the baud rate, and click the "Start Flashing" button or the "Batch Flashing" button in the top-right corner.
+Then check the serial devices you need to flash in the "Available Serial Ports", set the baud rate, and click the "Start Flashing" button or the "Batch Flashing" button in the upper right corner.
 
-![WeChat_20250104015946.png]()
+![WeChat_20250104015946.png](https://s2.loli.net/2025/01/04/hyc6tRg3VjJN9qs.jpg)
 
-Wait for the progress bar to complete, and the flashing will be finished.
+Wait for the progress bar to complete the flashing.
 
-![WeChat_20250104021002.png]()
+![WeChat_20250104021002.png](https://s2.loli.net/2025/01/04/XDhLoZvUlu7ixpf.jpg)
 
 ## Testing
 
-<Aside type="tip" title="Friendly Tip">There are various types of tests, such as external voltage and current tests, component tests, and various trigger tests. In this tutorial, we are focusing on serial port testing.</Aside>
+<Aside type="tip" title="Warm Content">The content of testing is varied, such as external voltage and current testing of power-on components, various trigger tests, etc. Here we provide a tutorial for your serial port testing.</Aside>
 
-Once your serial port is **automatically powered on or manually powered on**, open the "Serial Terminal" page and carefully configure your serial port settings. Generally, they should be configured as follows:
-
-<Card title="Serial Terminal Configuration" icon="information">
-  - Serial Port: COMX - USB-SERIAL CH34X (COMX)
-  - Data Bits: 8
-  - Parity: None
-  - Stop Bits: 1
-  - Flow Control: None
-  - Package Delay: 50 (recommended)
-  - Baud Rate: 115200 (recommended)
-</Card>
-
-![WeChat_20250104021843.png]()
-
-Once the configuration is correct, you will see the normal serial terminal output.
-
-![WeChat_20250104022247.png]()
+After **automatic or manual power-on** of your serial port, open the "
