@@ -1,22 +1,195 @@
+--- 
+title: BearPi BM-H21E AT Usage 
+description: BearPi BM-H21E Development Board AT Command Usage Tutorial 
+pagefind: false 
 ---
-title: BearPi BM-H21E AT Usage
-description: BearPi BM-H21E Development Board AT Command Usage Tutorial
-pagefind: false
----
-import { Aside } from '@astrojs/starlight/components';
-import { Tabs, TabItem } from '@astrojs/starlight/components';
-import { Card, CardGrid } from '@astrojs/starlight/components';
-import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';  
+import { Tabs, TabItem } from '@astrojs/starlight/components';  
+import { Card, CardGrid } from '@astrojs/starlight/components';  
+import { Steps } from '@astrojs/starlight/components';  
+  
+<Card title="Device Information" icon="information">  
+  - Device Model: BearPi BM-H21E  
+  - Main Chip: Hi2821  
+  - Supports BLE 5.4 + SLE 1.0 Dual-Mode Coexistence  
+  - Onboard User Button + Power-on Serial TXRX Pins + Status Indicator + NearLink Module and Built-in Module Antenna  
+</Card>  
 
-# BearPi BM H21E AT Command Guide
+## BearPi AT Command Usage Tutorial  
 
-<Card title="Device Information" icon="information">
-  - Device Model: BearPi BM-H21E
-  - Main Control Chip: Hi2821
-  - Supports BLE 5.4 + SLE 1.0 Dual Mode Coexistence
-  - Onboard User Button + Power-on Serial TXRX Pins + Status Indicator + NearLink Module and Built-in Antenna
-</Card>
+<Tabs>  
+  <TabItem label="BearPi AT (Server Mode)">  
+  <Aside type="note" title="Tip">BearPi is linked with NearLink network, please ensure the device has been flashed with AT firmware, and the software has imported the serial command set.</Aside>
 
-## BearPi AT Command Usage Tutorial
+<Steps>  
 
-<Aside type="note" title="Tip">The following AT commands can be directly copied and sent in the serial terminal. Follow the sequence of operations.</Aside>
+1. Set Server mode  
+
+    ```bash  
+    AT+SETMODE=1  
+    ```  
+
+2. Set Server MAC address  
+
+    ```bash  
+    AT+SETSLEADDR=111122220009  
+    ```  
+
+3. Set Server name to SERVER  
+
+    ```bash  
+    AT+SSETNAME=SERVER  
+    ```  
+
+4. Start the server to await connection  
+
+    ```bash  
+    AT+SSERVER=1  
+    ```  
+
+5. View connected Clients  
+
+    ```bash  
+    AT+SCLIST  
+    ```  
+
+6. Received the string "123456" from Client named CLIENT1  
+
+    ```bash  
+    +SRECVDATA:CLIENT1,313233343536  
+    ```  
+
+7. Send string "123" to Client named CLIENT1  
+
+    ```bash  
+    AT+SSEND=CLIENT1,123  
+    ```  
+
+8. Disconnect from Client named CLIENT1  
+
+    ```bash  
+    AT+SKILLCLIENT=CLIENT1  
+    ```  
+
+</Steps>  
+
+  </TabItem>  
+
+  <TabItem label="BearPi AT (Client 1)">  
+  <Aside type="note" title="Tip">BearPi is linked with NearLink network, please ensure the device has been flashed with AT firmware, and the software has imported the serial command set.</Aside>
+
+<Steps>  
+
+1. Set to Client mode  
+
+    ```bash  
+    AT+SETMODE=0  
+    ```  
+
+2. Set the Client MAC address  
+
+    ```bash  
+    AT+SETSLEADDR=111122220001  
+    ```  
+
+3. Set Client name to CLIENT1  
+
+    ```bash  
+    AT+CSETNAME=CLIENT1  
+    ```  
+
+4. Search and Retrieve Server List
+
+    ```bash
+    AT+CSLIST
+    ```
+
+    <Aside type="note" title="Tip">In this process, the search will be automatically recognized and output to the serial page until it completely returns OK</Aside>
+
+5. Connect to a server named SERVER  
+
+    ```bash  
+    AT+CCONNECT=SERVER  
+    ```  
+
+6. Send "123456" String (in HEX format) to Server Named SERVER
+
+    ```bash
+    AT+CSEND=313233343536
+    ```
+
+    Receive "123" String (in HEX format) from Server 
+
+    ```bash
+    +CRECVDATA:313233
+    ```
+
+7. Disconnect from the Server  
+
+    ```bash  
+    AT+CDISCONNECT  
+    ```  
+
+</Steps>  
+
+  </TabItem>  
+
+  <TabItem label="BearPi AT (Client 2)">  
+  <Aside type="note" title="Tip">BearPi is linked with NearLink network, please ensure the device has been flashed with AT firmware, and the software has imported the serial command set.</Aside>
+ 
+<Steps>  
+
+1. Set to Client mode  
+
+    ```bash  
+    AT+SETMODE=0  
+    ```  
+
+2. Set Client MAC address  
+
+    ```bash  
+    AT+SETSLEADDR=111122220002  
+    ```  
+
+3. Set Client name to CLIENT2  
+
+    ```bash  
+    AT+CSETNAME=CLIENT2  
+    ```  
+
+4. Search and Retrieve Server List
+
+    ```bash
+    AT+CSLIST
+    ```
+
+    <Aside type="note" title="Tip">In this process, the search will be automatically recognized and output to the serial page until it completely returns OK</Aside>
+
+5. Connect to a server named SERVER  
+
+    ```bash  
+    AT+CCONNECT=SERVER  
+    ```  
+
+6. Send "123456" String (in HEX format) to Server Named SERVER
+
+    ```bash
+    AT+CSEND=313233343536
+    ```
+
+    Receive "123" String (in HEX format) from Server 
+
+    ```bash
+    +CRECVDATA:313233
+    ```
+
+7. Disconnect from the Server  
+
+    ```bash  
+    AT+CDISCONNECT  
+    ```  
+
+</Steps>  
+
+  </TabItem>  
+</Tabs> 
