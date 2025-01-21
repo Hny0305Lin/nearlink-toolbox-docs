@@ -17,18 +17,177 @@ import { Steps } from '@astrojs/starlight/components';
 
 ## 小熊派 AT 指令使用教程
 
-<Aside type="note" title="提示">下面的AT指令, 直接复制到串口终端里发送就可以了, 按顺序操作。</Aside>
-
 <Tabs>
   <TabItem label="小熊派 AT(服务端)">
+  <Aside type="note" title="提示">小熊派设备为星闪网络链接, 请确保设备已经烧写AT固件, 并且软件已经导入串口命令集。</Aside>
+
+<Steps>
+
+1. 设置为服务端模式
+
+    ```bash
+    AT+SETMODE=1
+    ```
+
+2. 设置服务端MAC地址
+
+    ```bash 
+    AT+SETSLEADDR=111122220009
+    ```
+
+3. 设置服务端名称为SERVER
+
+    ```bash
+    AT+SSETNAME=SERVER
+    ```
+
+4. 服务端开启服务，等待连接
+
+    ```bash
+    AT+SSERVER=1
+    ```
+
+5. 查看连接上的客户端
+
+    ```bash
+    AT+SCLIST
+    ```
+
+6. 接收到名字为CLIENT1的客户端发来的"123456"的字符串
+
+    ```bash
+    +SRECVDATA:CLIENT1,313233343536
+    ```
+
+7. 向名字为CLIENT1的客户端发送"123"字符串
+
+    ```bash 
+    AT+SSEND=CLIENT1,123
+    ```
+
+8. 断开与名字为CLIENT1的客户端的连接
+
+    ```bash
+    AT+SKILLCLIENT=CLIENT1
+    ```
+
+</Steps>
 
   </TabItem>
 
   <TabItem label="小熊派 AT(客户端1)">
+  <Aside type="note" title="提示">小熊派设备为星闪网络链接, 请确保设备已经烧写AT固件, 并且软件已经导入串口命令集。</Aside>
+<Steps>
+
+1. 设置为客户端模式
+
+    ```bash
+    AT+SETMODE=0
+    ```
+
+2. 设置客户端MAC地址
+
+    ```bash
+    AT+SETSLEADDR=111122220001
+    ```
+
+3. 设置客户端名称为CLIENT1
+
+    ```bash
+    AT+CSETNAME=CLIENT1
+    ```
+
+4. 搜索并获取服务端列表
+
+    ```bash
+    AT+CSLIST
+    ```
+
+    <Aside type="note" title="提示">在这个过程里, 会自动识别搜索, 输出到串口页面里, 直到搜索完全为止返回OK</Aside>
+
+5. 连接名字为 SERVER 的服务端
+
+    ```bash
+    AT+CCONNECT=SERVER
+    ```
+
+6. 向名字为SERVER的服务端发送"123456"字符串(以HEX格式)
+
+    ```bash
+    AT+CSEND=313233343536
+    ```
+
+    接收到服务端发来的"123"字符串(以HEX格式)
+
+    ```bash
+    +CRECVDATA:313233
+    ```
+
+7. 断开与服务端的连接
+
+    ```bash
+    AT+CDISCONNECT
+    ```
+
+</Steps>
 
   </TabItem>
 
   <TabItem label="小熊派 AT(客户端2)">
+  <Aside type="note" title="提示">小熊派设备为星闪网络链接, 请确保设备已经烧写AT固件, 并且软件已经导入串口命令集。</Aside>
+<Steps>
+
+1. 设置为客户端模式
+
+    ```bash
+    AT+SETMODE=0
+    ```
+
+2. 设置客户端MAC地址
+
+    ```bash
+    AT+SETSLEADDR=111122220002
+    ```
+
+3. 设置客户端名称为CLIENT2
+
+    ```bash
+    AT+CSETNAME=CLIENT2
+    ```
+
+4. 搜索并获取服务端列表
+
+    ```bash
+    AT+CSLIST
+    ```
+
+    <Aside type="note" title="提示">在这个过程里, 会自动识别搜索, 输出到串口页面里, 直到搜索完全为止返回OK</Aside>
+
+5. 连接名字为 SERVER 的服务端
+
+    ```bash
+    AT+CCONNECT=SERVER
+    ```
+
+6. 向名字为SERVER的服务端发送"123456"字符串(以HEX格式)
+
+    ```bash
+    AT+CSEND=313233343536
+    ```
+
+    接收到服务端发来的"123"字符串(以HEX格式)
+
+    ```bash
+    +CRECVDATA:313233
+    ```
+
+7. 断开与服务端的连接
+
+    ```bash
+    AT+CDISCONNECT
+    ```
+
+</Steps>
 
   </TabItem>
 </Tabs>
